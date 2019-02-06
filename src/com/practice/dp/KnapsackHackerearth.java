@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.practice.dp;
 
 public class KnapsackHackerearth {
 

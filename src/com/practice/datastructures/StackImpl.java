@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.practice.datastructures;
 
 public class StackImpl {
 	public static void main(String args[]) throws Exception {

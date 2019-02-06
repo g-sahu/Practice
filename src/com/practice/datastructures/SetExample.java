@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.practice.datastructures;
 
 import java.util.HashSet;
 import java.util.Iterator;

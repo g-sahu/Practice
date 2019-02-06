@@ -3,7 +3,6 @@ package com.practice.dp;
 import java.util.Scanner;
 
 public class Greatest {
-	int x = 0;
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -18,12 +17,12 @@ public class Greatest {
 		System.out.println(findGreatest(arr));
 	}
 	
-	static int findGreatest(int arr[]) {
+	private static int findGreatest(int arr[]) {
 		int max=arr[0];
 		
-		for (int i=0;i<arr.length; i++) {
-			if (arr[i]>max) {
-				max=arr[i];
+		for (int i=0; i<arr.length; i++) {
+			if (arr[i] > max) {
+				max = arr[i];
 			}
 		}		
 
@@ -31,7 +30,7 @@ public class Greatest {
 	}
 	
 	void show() {
-		x = 20;
+		int x = 20;
 		System.out.println(x);
 	}
 	

@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.practice.designpatterns;
 
 public class ObserverExample {
 	public static void main(String[] args) {

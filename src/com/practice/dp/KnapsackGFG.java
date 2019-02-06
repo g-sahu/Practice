@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.practice.dp;
 
 public class KnapsackGFG {
 	public static void main(String args[]) {

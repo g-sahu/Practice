@@ -1,7 +1,5 @@
-package com.practice.interviews;
+package com.practice.datastructures;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;

@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.practice.designpatterns;
 
 import java.util.ArrayList;
 import java.util.List;
