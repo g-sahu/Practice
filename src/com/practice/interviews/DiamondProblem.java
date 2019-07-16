@@ -1,28 +1,33 @@
 package com.practice.interviews;
 
 public class DiamondProblem {
-	public static void main(String args[]) {
-		ParentA a = new ChildA();
-		ParentB b = new ChildA();
-		a.doSomething();
-		b.doSomething();
-	}
+    public static void main(String args[]) {
+        Parent a = new Child();
+        IParent b = new Child();
+        Child c = new Child();
+
+        a.print();
+        b.print();
+        c.print();
+    }
 }
 
-class ParentA {
-	public void doSomething() {
-		System.out.println(getClass().getName());
-	}
-	
+class Parent {
+    int x = 20;
+
+    public void print() {
+        System.out.println(x);
+    }
 }
 
-class ChildA extends ParentA implements ParentB {
-	public void doSomething() {
-		super.doSomething();
-		System.out.println(getClass().getName());		
-	}
+interface IParent {
+    int x = 10;
+
+    void print();
 }
 
-interface ParentB {
-	void doSomething();
+class Child extends Parent implements IParent {
+    public void print() {
+        //System.out.println(x); //Ambiguous reference;
+    }
 }
