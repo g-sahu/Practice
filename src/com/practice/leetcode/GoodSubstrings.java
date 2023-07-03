@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
- * 1876. Substrings of Size Three with Distinct Characters
+/* 1876. Substrings of Size Three with Distinct Characters
+
  * A string is good if there are no repeated characters.
  * Given a string s, return the number of good substrings of length three in s.
  * Note that if there are multiple occurrences of the same substring, every occurrence should be counted.
@@ -30,58 +30,55 @@ public class GoodSubstrings {
 
     public static void main(String[] args) {
         GoodSubstrings g = new GoodSubstrings();
-        String s = "xyzzaz";
+        String s = "aababcabc";
         System.out.println(g.countGoodSubstrings(s));
     }
 
     public int countGoodSubstrings(String s) {
+        int i = 0;
+        int j = 0;
+        int c = 0;
+        int k = 3;
         int l = s.length();
-
-        if (l < 3) {
-            return 0;
-        }
-
         Map<Character, Integer> map = new HashMap<>();
 
-        for (int i = 0; i < 3; i++) {
-            char ch = s.charAt(i);
-            int newVal = map.getOrDefault(ch, 0) + 1;
-            map.put(ch, newVal);
-        }
-
-        int i = 1;
-        int j = 3;
-        int c = 0;
-
-        if (map.size() == 3) {
-            c++;
-        }
-
         while (j < l) {
-            //For prev char
-            char lch = s.charAt(i - 1);
-            int newVal = map.getOrDefault(lch, 0) - 1;
-
-            if (newVal <= 0) {
-                map.remove(lch);
-            } else {
-                map.put(lch, newVal);
+            if (i > 0) {
+                removePrev(s, i, map);
             }
 
-            //For next char
-            char rch = s.charAt(j);
-            newVal = map.getOrDefault(rch, 0) + 1;
-            map.put(rch, newVal);
+            addNext(s, j, map);
 
-            //Check if it's a 'good substring'
-            if (map.size() == 3) {
-                c++;
+            if ((j - i + 1) == k) {
+                if (map.size() == k) {
+                    c++;
+                }
+
+                i++;
             }
 
-            i++;
             j++;
         }
 
         return c;
+    }
+
+    private static void addNext(String s, int j, Map<Character, Integer> map) {
+        //For next char
+        char rch = s.charAt(j);
+        int newVal = map.getOrDefault(rch, 0) + 1;
+        map.put(rch, newVal);
+    }
+
+    private static void removePrev(String s, int i, Map<Character, Integer> map) {
+        //For prev char
+        char lch = s.charAt(i - 1);
+        int newVal = map.getOrDefault(lch, 0) - 1;
+
+        if (newVal <= 0) {
+            map.remove(lch);
+        } else {
+            map.put(lch, newVal);
+        }
     }
 }
