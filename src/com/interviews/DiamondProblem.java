@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.interviews;
 
 public class DiamondProblem {
     public static void main(String args[]) {

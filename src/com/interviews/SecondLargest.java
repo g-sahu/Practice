@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.interviews;
 
 public class SecondLargest {
 

@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.interviews;
 
 /**
  * Program to print sum of the both diagonal of matrix using only one loop.

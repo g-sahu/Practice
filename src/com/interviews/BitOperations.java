@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.interviews;
 
 import static java.lang.Integer.toBinaryString;
 

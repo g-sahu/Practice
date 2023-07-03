@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.interviews;
 
 import java.util.Stack;
 
@@ -50,4 +50,3 @@ public class BalanceParentheses {
 		}
 	}
 }
-

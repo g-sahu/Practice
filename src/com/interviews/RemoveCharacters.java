@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.interviews;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,7 +14,7 @@ public class RemoveCharacters {
 		String s2 = br.readLine();
 		char ch1[] = s1.toCharArray();
 		char ch2[] = s2.toCharArray();
-		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		Map<Character, Integer> map = new HashMap<>();
 		int c = 1, l = ch1.length;
 		
 		for(int i=0; i<l; i++) {

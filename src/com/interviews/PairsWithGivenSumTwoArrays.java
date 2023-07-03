@@ -1,8 +1,5 @@
-package com.practice.interviews;
+package com.interviews;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;

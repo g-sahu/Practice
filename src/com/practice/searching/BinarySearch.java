@@ -13,14 +13,12 @@ public class BinarySearch {
 	}
 	
 	private static int binarySearch(int arr[], int key) {
-		int beg, end, mid;
-		
-		beg = 0;
-		end = arr.length - 1;
+		int beg = 0;
+		int end = arr.length - 1;
 		
 		while(beg != end) {
-			mid = (beg + end) / 2;
-			
+			int mid = (beg + end) / 2;
+
 			if(key < arr[mid]) {
 				end = mid - 1;
 			} else if(key > arr[mid]) {

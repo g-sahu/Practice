@@ -10,7 +10,7 @@ import static com.practice.datastructures.trees.BinaryTree.Position.RIGHT;
 
 public class BinaryTreeExample {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         BinaryTreeExample btExample = new BinaryTreeExample();
         BinaryTree bt = new BinaryTree(1);
         bt.addNode(bt.root, new Node(2), LEFT);
@@ -39,33 +39,39 @@ public class BinaryTreeExample {
         }
     }
 
-    void printInorderIterative(Node root) {
+    private void printInorderIterative(Node root) {
         Stack<Node> stack = new Stack<>();
         Node node = root;
 
-        if(root != null) {
+        if (root == null) {
+            return;
+        }
+
+        /*
+            Traverse the left sub-tree and
+            push the nodes in the path that are waiting to be visited in a stack
+        */
+        while (node != null) {
+            stack.push(node);
+            node = node.left;
+        }
+
+        //Traverse the tree
+        while (stack.size() > 0) {
+            node = stack.pop();
+            System.out.print(node.data + " ");
+
+            if (node.right == null) {
+                continue;
+            }
+
+            node = node.right;
+
             //Traverse the left sub-tree and
             //push the nodes in the path that are waiting to be visited in a stack
             while (node != null) {
                 stack.push(node);
                 node = node.left;
-            }
-
-            //Traverse the tree
-            while (stack.size() > 0) {
-                node = stack.pop();
-                System.out.print(node.data + " ");
-
-                if (node.right != null) {
-                    node = node.right;
-
-                    //Traverse the left sub-tree and
-                    //push the nodes in the path that are waiting to be visited in a stack
-                    while (node != null) {
-                        stack.push(node);
-                        node = node.left;
-                    }
-                }
             }
         }
     }
@@ -151,17 +157,17 @@ public class BinaryTreeExample {
         queue.add(root);
 
         while(!queue.isEmpty()) {
-            Node tempNode = queue.poll();
-            System.out.print(tempNode.data + " ");
+            Node node = queue.poll();
+            System.out.print(node.data + " ");
 
             //Enqueue left child
-            if(tempNode.left != null) {
-                queue.add(tempNode.left);
+            if(node.left != null) {
+                queue.add(node.left);
             }
 
             //Enqueue right child
-            if(tempNode.right != null) {
-                queue.add(tempNode.right);
+            if(node.right != null) {
+                queue.add(node.right);
             }
         }
     }
@@ -264,4 +270,3 @@ public class BinaryTreeExample {
         return left;
     }
 }
-

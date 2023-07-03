@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.interviews;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,7 +15,7 @@ public class ThoughtWorksString {
 	    String s2 = "mat";
 	    String s3 = "phone";
 
-	    ArrayList<Character> list = new ArrayList<Character>();
+	    ArrayList<Character> list = new ArrayList<>();
 
 	    while (len1 != s1.length() || len2 != s2.length() || len3 != s3.length()) {
 	    	if (len1 != s1.length()) {

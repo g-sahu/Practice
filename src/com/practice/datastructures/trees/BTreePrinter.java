@@ -20,7 +20,7 @@ class BTreePrinter {
         }
 
         int floor = maxLevel - level;
-        int endgeLines = (int) pow(2, (max(floor - 1, 0)));
+        int edgeLines = (int) pow(2, (max(floor - 1, 0)));
         int firstSpaces = (int) pow(2, (floor)) - 1;
         int betweenSpaces = (int) pow(2, (floor + 1)) - 1;
 
@@ -41,13 +41,13 @@ class BTreePrinter {
             printWhitespaces(betweenSpaces);
         }
 
-        System.out.println("");
+        System.out.println();
 
-        for (int i = 1; i <= endgeLines; i++) {
+        for (int i = 1; i <= edgeLines; i++) {
             for (int j = 0; j < nodes.size(); j++) {
                 printWhitespaces(firstSpaces - i);
                 if (nodes.get(j) == null) {
-                    printWhitespaces(endgeLines + endgeLines + i + 1);
+                    printWhitespaces(edgeLines + edgeLines + i + 1);
                     continue;
                 }
 
@@ -65,10 +65,10 @@ class BTreePrinter {
                     printWhitespaces(1);
                 }
 
-                printWhitespaces(endgeLines + endgeLines - i);
+                printWhitespaces(edgeLines + edgeLines - i);
             }
 
-            System.out.println("");
+            System.out.println();
         }
 
         printNodeInternal(newNodes, level + 1, maxLevel);

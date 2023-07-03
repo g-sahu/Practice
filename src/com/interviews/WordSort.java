@@ -1,4 +1,4 @@
-package com.practice.interviews;
+package com.interviews;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,7 +10,7 @@ public class WordSort {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str = br.readLine();
-		String words[] = str.split(" ");
+		String[] words = str.split(" ");
 		Arrays.sort(words);  
 		StringBuilder sb = new StringBuilder();
 		
