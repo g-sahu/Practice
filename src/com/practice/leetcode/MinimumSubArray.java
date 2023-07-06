@@ -29,41 +29,40 @@ public class MinimumSubArray {
     public static void main(String[] args) {
         MinimumSubArray ms = new MinimumSubArray();
         int target = 11;
-        int[] nums = {1,2,3,4,5};
+        int[] nums = {1,1,1,1,1,1,1,1};
         System.out.println(ms.minSubArrayLen(target, nums));
     }
 
     public int minSubArrayLen(int target, int[] nums) {
         int min = 0;
         int sum = 0;
-        int k = 0;
+        int i = 0;
 
-        for (int i = 0; i < nums.length; i++) {
+        while (i < nums.length) {
             sum += nums[i];
 
             if (sum >= target) {
-                k = i + 1;
-                min = k;
+                min = i + 1;
                 break;
             }
+
+            i++;
         }
 
-        int i = 1;
+        int j = i;
+        i = 1;
 
-        while (i < nums.length) {
-            int j = 0;
-            sum = 0;
+        while (j < nums.length) {
+            sum -= nums[i - 1];
 
-            while ((i + j < nums.length) && j < k - 1){
-                sum += nums[i + j];
-
-                if (sum >= target) {
-                    k = j + 1;
-                    min = k;
-                    break;
-                }
-
+            if (sum >= target) {
+                --min;
+            } else {
                 j++;
+
+                if (j < nums.length) {
+                    sum += nums[j];
+                }
             }
 
             i++;
