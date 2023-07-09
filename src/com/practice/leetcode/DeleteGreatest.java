@@ -58,7 +58,7 @@ public class DeleteGreatest {
             int max = -1;
 
             for (int[] arr : grid) {
-                max = Math.max(arr[j], max);
+                max = arr[j] > max ? arr[j] : max;
             }
 
             sum += max;
