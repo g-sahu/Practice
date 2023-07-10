@@ -3,9 +3,9 @@ package com.practice.leetcode;
 /*
 LeetCode #231. Power of Two
  */
-public class PowerofTwo {
+public class PowerOfTwo {
     public static void main(String[] args) {
-        PowerofTwo pot = new PowerofTwo();
+        PowerOfTwo pot = new PowerOfTwo();
         System.out.println(pot.isPowerOfTwo(6));
     }
 
