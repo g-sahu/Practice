@@ -36,4 +36,10 @@ public class LeetUtils {
 
         System.out.print("]");
     }
+
+    //Creates a binary tree from an array using level order traversal (BFS)
+    public static TreeNode buildTree(Integer[] arr) {
+        //TODO: Implement this
+        return null;
+    }
 }
