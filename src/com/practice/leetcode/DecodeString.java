@@ -6,11 +6,42 @@ import java.util.Stack;
 LeetCode #394. Decode String
  */
 public class DecodeString {
+    private int i = 0;
 
     public static void main(String[] args) {
         DecodeString ds = new DecodeString();
-        String s = "100[leetcode]";
-        System.out.println(ds.decodeString(s));
+        String s = "2[abc]3[cd]ef";
+        System.out.println(ds.decodeStringRecursive(s));
+    }
+
+    public String decodeStringRecursive(String s) {
+        StringBuilder sb = new StringBuilder();
+        int num = 0;
+
+        while (i < s.length()) {
+            char ch = s.charAt(i);
+
+            if (Character.isDigit(ch)) {
+                num = (num * 10) + (ch - '0');
+            }
+            else if (Character.isLetter(ch)) {
+                sb.append(ch);
+            }
+            else if (ch == '[') {
+                i++;
+                String temp = decodeStringRecursive(s);
+                String inner = append(temp, num);
+                sb.append(inner);
+                num = 0;
+            }
+            else if (ch == ']') {
+                return sb.toString();
+            }
+
+            i++;
+        }
+
+        return sb.toString();
     }
 
     public String decodeString(String s) {
