@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-import static java.math.BigDecimal.*;
+import static java.math.BigDecimal.ONE;
 
 public class PowerOfN {
     private static BigDecimal i = ONE;

@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 /**
  * You are given an array consisting of non-negative integers. Now, you need to answer queries of the following type given an integer K in each query.
