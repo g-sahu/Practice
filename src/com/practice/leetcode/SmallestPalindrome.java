@@ -6,7 +6,7 @@ package com.practice.leetcode;
 public class SmallestPalindrome {
     public static void main(String[] args) {
         SmallestPalindrome sp = new SmallestPalindrome();
-        String s = "abcd";
+        String s = "egcfe";
         System.out.println(sp.makeSmallestPalindrome(s));
     }
 
@@ -15,18 +15,11 @@ public class SmallestPalindrome {
         int j = s.length() - 1;
         StringBuilder sb = new StringBuilder();
 
-        while (i <= j){
+        while (j >= 0) {
             char ch1 = s.charAt(i);
             char ch2 = s.charAt(j);
             char newChar = ch1 < ch2 ? ch1 : ch2;
-
-            if (i != j) {
-                sb.insert(i, newChar);
-                sb.insert(i+1, newChar);
-            } else {
-                sb.insert(i, newChar);
-            }
-
+            sb.append(newChar);
             i++;
             j--;
         }
