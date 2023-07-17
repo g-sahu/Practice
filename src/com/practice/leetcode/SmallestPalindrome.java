@@ -11,19 +11,20 @@ public class SmallestPalindrome {
     }
 
     public String makeSmallestPalindrome(String s) {
+        char[] string = s.toCharArray();
         int i = 0;
         int j = s.length() - 1;
-        StringBuilder sb = new StringBuilder();
 
-        while (j >= 0) {
-            char ch1 = s.charAt(i);
-            char ch2 = s.charAt(j);
+        while (i <= j) {
+            char ch1 = string[i];
+            char ch2 = string[j];
             char newChar = ch1 < ch2 ? ch1 : ch2;
-            sb.append(newChar);
+            string[i] = newChar;
+            string[j] = newChar;
             i++;
             j--;
         }
 
-        return sb.toString();
+        return new String(string);
     }
 }
