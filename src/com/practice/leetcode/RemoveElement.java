@@ -2,44 +2,42 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
+/*
+27. Remove Element
+ */
 public class RemoveElement {
     public static void main(String[] args) {
-        int[] nums = {4, 5};
-        int val = 5;
-        RemoveElement rm = new RemoveElement();
-        System.out.println("k = " + rm.removeElement(nums, val));
+        int[] nums = {0,1,2,2,3,0,4,2};
+        //0,0,1,2,2,2,3,4
+        int val = 2;
+        RemoveElement re = new RemoveElement();
+        System.out.println(re.removeElement(nums, val));
     }
 
     public int removeElement(int[] nums, int val) {
-        int size = nums.length;
-
-        if(size == 0) {
-            return 0;
-        }
-
+        Arrays.sort(nums);
         int i = 0;
-        int j = size - 1;
+        int j = -1;
+        int l = nums.length;
+        int c = 0;
 
-        if (i == j) {
-            return nums[i] == val ? 0 : 1;
-        }
-
-        while (i < j) {
+        while (i < l) {
             if (nums[i] == val) {
-                while (j > i && nums[j] == val) {
-                    j--;
-                }
-
-                int t = nums[i];
-                nums[i] = nums[j];
-                nums[j] = t;
-                j--;
+                j = j == -1 ? i : j;
+                c++;
             }
 
             i++;
         }
 
-        System.out.println("nums = " + Arrays.toString(nums));
-        return j + 1;
+        int k = l - c;
+
+        for (int m = 1; m <= c; m++) {
+            nums[j] = nums[l - 1];
+            j++;
+            l--;
+        }
+
+        return k;
     }
 }
