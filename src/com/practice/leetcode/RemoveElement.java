@@ -16,28 +16,18 @@ public class RemoveElement {
 
     public int removeElement(int[] nums, int val) {
         Arrays.sort(nums);
-        int i = 0;
-        int j = -1;
         int l = nums.length;
+        int j = l - 1;
         int c = 0;
 
-        while (i < l) {
+        for (int i = 0; i < l; i++) {
             if (nums[i] == val) {
-                j = j == -1 ? i : j;
+                nums[i] = nums[j];
                 c++;
+                j--;
             }
-
-            i++;
         }
 
-        int k = l - c;
-
-        for (int m = 1; m <= c; m++) {
-            nums[j] = nums[l - 1];
-            j++;
-            l--;
-        }
-
-        return k;
+        return l - c;
     }
 }
