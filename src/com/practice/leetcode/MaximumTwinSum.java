@@ -12,9 +12,9 @@ public class MaximumTwinSum {
 
     public static void main(String[] args) {
         MaximumTwinSum mts = new MaximumTwinSum();
-        int[] list = {1,100000};
+        int[] list = {1,2,3,4,5};
         ListNode head = LeetUtils.buildLinkedList(list);
-        System.out.println(mts.pairSum3(head));
+        System.out.println(mts.pairSum2(head));
     }
 
     //With Array and Two Pointers
@@ -45,7 +45,7 @@ public class MaximumTwinSum {
         Stack<Integer> stack = new Stack<>();
         ListNode slow = head;
 
-        while (head != null) {
+        while (head != null && head.next != null) {
             stack.push(slow.val);
             head = head.next.next;
             slow = slow.next;
