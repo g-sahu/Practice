@@ -18,16 +18,13 @@ public class SwapNodesLinkedList {
         ListNode tail = head;
 
         for (int i = 1; i < k; i++) {
+            left = left.next;
             tail = tail.next;
         }
 
         while (tail.next != null) {
             right = right.next;
             tail = tail.next;
-        }
-
-        for (int i = 1; i < k; i++) {
-            left = left.next;
         }
 
         int temp = left.val;
