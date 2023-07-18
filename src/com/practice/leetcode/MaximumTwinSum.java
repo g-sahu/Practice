@@ -8,14 +8,16 @@ import java.util.Stack;
 2130. Maximum Twin Sum of a Linked List
  */
 public class MaximumTwinSum {
+    private ListNode temp;
+
     public static void main(String[] args) {
         MaximumTwinSum mts = new MaximumTwinSum();
-        int[] list = {5,4,2,1};
+        int[] list = {1,100000};
         ListNode head = LeetUtils.buildLinkedList(list);
-        System.out.println(mts.pairSum2(head));
+        System.out.println(mts.pairSum3(head));
     }
 
-    //With Array
+    //With Array and Two Pointers
     public int pairSum1(ListNode head) {
         List<Integer> list = new ArrayList<>();
 
@@ -38,7 +40,7 @@ public class MaximumTwinSum {
         return maxSum;
     }
 
-    //With Stack
+    //With Stack and Two Pointers
     public int pairSum2(ListNode head) {
         Stack<Integer> stack = new Stack<>();
         ListNode slow = head;
@@ -58,5 +60,22 @@ public class MaximumTwinSum {
         }
 
         return maxSum;
+    }
+
+    //Recursion
+    public int pairSum3(ListNode head) {
+        temp = head;
+        return getMaxSum(head);
+    }
+
+    private int getMaxSum(ListNode node) {
+        if (node.next == null) {
+            return temp.val + node.val;
+        }
+
+        int prevSum = getMaxSum(node.next);
+        temp = temp.next;
+        int sum = temp.val + node.val;
+        return sum > prevSum ? sum : prevSum;
     }
 }
