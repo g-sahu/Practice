@@ -1,7 +1,10 @@
 package com.practice.leetcode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
 
 /*
@@ -24,17 +27,22 @@ public class KWeakestRows {
     }
 
     public int[] kWeakestRows(int[][] mat, int k) {
-        PriorityQueue<MyRow> pq = new PriorityQueue<>();
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        Map<Integer, List<Integer>> map = new HashMap<>();
 
         for (int i = 0; i < mat.length; i++) {
             int sum = findSum(mat[i]);
-            pq.offer(new MyRow(sum, i));
+            pq.offer(sum);
+            List<Integer> list = map.containsKey(sum) ? map.get(sum) : new ArrayList<>();
+            list.add(i);
+            map.put(sum, list);
         }
 
         int[] indices = new int[k];
 
         for (int i = 0; i < k; i++) {
-            indices[i] = pq.poll().getIndex();
+            List<Integer> list = map.get(pq.poll());
+            indices[i] = list.remove(0);
         }
 
         return indices;
@@ -51,30 +59,5 @@ public class KWeakestRows {
         }
 
         return c;
-    }
-}
-
-class MyRow implements Comparable<MyRow> {
-    int sum;
-    int index;
-
-    public MyRow(int sum, int index) {
-        this.sum = sum;
-        this.index = index;
-    }
-
-    public int getSum() {
-        return sum;
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
-    @Override
-    public int compareTo(MyRow myRow) {
-        return Comparator.comparingInt(MyRow :: getSum)
-                         .thenComparing(MyRow :: getIndex)
-                         .compare(this, myRow);
     }
 }
