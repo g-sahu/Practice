@@ -49,7 +49,14 @@ public class KWeakestRows {
     }
 
     private int findSum(int[] arr) {
+        int l = arr.length;
+
+        if (arr[l - 1] == 1) {
+            return l;
+        }
+
         int c = 0;
+
         for (int n: arr) {
             if (n == 1) {
                 c++;
