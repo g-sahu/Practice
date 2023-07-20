@@ -2,7 +2,9 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /*
 2357. Make Array Zero by Subtracting Equal Amounts
@@ -11,7 +13,7 @@ public class MakeArrayZero {
     public static void main(String[] args) {
         MakeArrayZero maz = new MakeArrayZero();
         int[] nums = {1,5,0,3,5};
-        System.out.println(maz.minimumOperations2(nums));
+        System.out.println(maz.minimumOperations3(nums));
     }
 
     //Using sorting
@@ -50,5 +52,18 @@ public class MakeArrayZero {
         }
 
         return map.keySet().size();
+    }
+
+    //Using Set
+    public int minimumOperations3(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+
+        for (int num: nums) {
+            if (num != 0) {
+                set.add(num);
+            }
+        }
+
+        return set.size();
     }
 }
