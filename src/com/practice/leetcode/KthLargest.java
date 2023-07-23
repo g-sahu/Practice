@@ -1,6 +1,5 @@
 package com.practice.leetcode;
 
-import java.util.Arrays;
 import java.util.PriorityQueue;
 
 /*
@@ -15,28 +14,22 @@ public class KthLargest {
         pq = new PriorityQueue<>();
         int l = nums.length;
 
-        if (l == 0) {
-            return;
-        }
-
-        Arrays.sort(nums);
-
-        for (int i = l - 1; i >= 0; i--) {
-            if (i >= l-k) {
-                pq.offer(nums[i]);
-            }
+        for (int num : nums) {
+            add(k, num);
         }
     }
 
     public int add(int val) {
-        if (pq.size() < k) {
-            pq.offer(val);
-        }
-        else if (val > pq.peek()) {
-            pq.poll();
-            pq.offer(val);
-        }
-
+        add(k, val);
         return pq.peek();
+    }
+
+    private void add(int k, int num) {
+        if (pq.size() < k) {
+            pq.offer(num);
+        } else if (num > pq.peek()) {
+            pq.poll();
+            pq.offer(num);
+        }
     }
 }
