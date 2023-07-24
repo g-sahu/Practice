@@ -1,6 +1,6 @@
 package com.practice.leetcode;
 
-import java.util.Arrays;
+import static com.practice.leetcode.LeetUtils.printMatrix;
 
 /*
     867. Transpose Matrix
@@ -31,10 +31,7 @@ public class TransposeMatrix {
         };
 
         int[][] tr = tm.transpose(matrix);
-
-        for (int[] r: tr) {
-            System.out.println(Arrays.toString(r));
-        }
+        printMatrix(tr);
     }
 
     public int[][] transpose(int[][] matrix) {

@@ -1,5 +1,7 @@
 package com.practice.leetcode;
 
+import java.util.Arrays;
+
 @SuppressWarnings("java:S106")
 public class LeetUtils {
     private LeetUtils() {}
@@ -35,6 +37,12 @@ public class LeetUtils {
         }
 
         System.out.print("]");
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row: matrix) {
+            System.out.println(Arrays.toString(row));
+        }
     }
 
     //Creates a binary tree from an array using level order traversal (BFS)
