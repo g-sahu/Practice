@@ -6,7 +6,7 @@ package com.practice.leetcode;
 public class ReverseInteger {
     public static void main(String[] args) {
         ReverseInteger ri = new ReverseInteger();
-        System.out.println(ri.reverse(-1));
+        System.out.println(ri.reverse(-10));
     }
 
     public int reverse(int x) {
@@ -16,22 +16,14 @@ public class ReverseInteger {
             return 0;
         }
 
-        if (x > -10 && x < 10) {
-            return x;
-        }
-
-        if (x <= -10) {
+        if (x < 0) {
             sb.append("-");
             x = -x;
         }
 
-        int q = x;
-        int rem;
-
-        while (q != 0) {
-            rem = q % 10;
-            q = q/10;
-            sb.append(rem);
+        while (x != 0) {
+            sb.append(x % 10);
+            x = x/10;
         }
 
         int i;
