@@ -10,8 +10,8 @@ import java.util.Stack;
 public class PlusOne {
     public static void main(String[] args) {
         PlusOne po = new PlusOne();
-        int[] digits = {1,0,0};
-        System.out.println(Arrays.toString(po.plusOne2(digits)));
+        int[] digits = {9,9};
+        System.out.println(Arrays.toString(po.plusOne3(digits)));
     }
 
     //Using BigInteger
@@ -81,6 +81,26 @@ public class PlusOne {
             arr[i++] = stack.pop();
         }
 
+        return arr;
+    }
+
+    //Without extra space
+    public int[] plusOne3(int[] digits) {
+        int l = digits.length;
+
+        for (int i = l-1; i >= 0; i--) {
+            int n = digits[i];
+
+            if (n == 9) {
+                digits[i] = 0;
+            } else {
+                digits[i]++;
+                return digits;
+            }
+        }
+
+        int[] arr = new int[l+1];
+        arr[0] = 1;
         return arr;
     }
 }
