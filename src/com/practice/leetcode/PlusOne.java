@@ -10,11 +10,12 @@ import java.util.Stack;
 public class PlusOne {
     public static void main(String[] args) {
         PlusOne po = new PlusOne();
-        int[] digits = {7,2,8,5,0,9,1,2,9,5,3,6,6,7,3,2,8,4,3,7,9,5,7,7,4,7,4,9,4,7,0,1,1,1,7,4,0,0,6};
-        System.out.println(Arrays.toString(po.plusOne(digits)));
+        int[] digits = {1,0,0};
+        System.out.println(Arrays.toString(po.plusOne2(digits)));
     }
 
-    public int[] plusOne(int[] digits) {
+    //Using BigInteger
+    public int[] plusOne1(int[] digits) {
         BigInteger num = numFromDigits(digits);
         num = num.add(BigInteger.ONE);
         return numToDigits(num);
@@ -47,5 +48,39 @@ public class PlusOne {
         }
 
         return digits;
+    }
+
+    //Without BigInteger
+    public int[] plusOne2(int[] digits) {
+        int l = digits.length;
+        Stack<Integer> stack = new Stack<>();
+        int carry = 1;
+
+        for (int i = l-1; i >= 0; i--) {
+            int n = digits[i];
+
+            if (n + carry == 10) {
+                n = 0;
+            } else {
+                n = n + carry;
+                carry = 0;
+            }
+
+            stack.push(n);
+        }
+
+        if (carry == 1) {
+            stack.push(carry);
+        }
+
+        int size = stack.size();
+        int[] arr = new int[size];
+        int i = 0;
+
+        while (!stack.isEmpty()) {
+            arr[i++] = stack.pop();
+        }
+
+        return arr;
     }
 }
