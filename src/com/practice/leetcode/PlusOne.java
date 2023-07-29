@@ -1,9 +1,7 @@
 package com.practice.leetcode;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Stack;
 
 /*
@@ -40,14 +38,14 @@ public class PlusOne {
             num = num.divide(BigInteger.TEN);
         }
 
-        List<Integer> digits = new ArrayList<>();
+        int size = stack.size();
+        int[] digits = new int[size];
+        int i = 0;
 
         while (!stack.isEmpty()) {
-            digits.add(stack.pop());
+            digits[i++] = stack.pop();
         }
 
-        return digits.stream()
-                     .mapToInt(Integer :: intValue)
-                     .toArray();
+        return digits;
     }
 }
