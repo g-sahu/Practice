@@ -33,10 +33,7 @@ public class MergeSortedArray {
             if (i >= m) {
                 nums[c] = nums2[j];
                 j++;
-            } else if (j >= n) {
-                nums[c] = nums1[i];
-                i++;
-            } else if (nums1[i] <= nums2[j]) {
+            } else if (j >= n || nums1[i] <= nums2[j]) {
                 nums[c] = nums1[i];
                 i++;
             } else {
