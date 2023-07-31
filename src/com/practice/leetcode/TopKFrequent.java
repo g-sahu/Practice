@@ -1,7 +1,6 @@
 package com.practice.leetcode;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,11 +25,10 @@ public class TopKFrequent {
         }
 
         int[] topK = new int[k];
-        Comparator<Map.Entry<Integer, Integer>> comparator = (e1, e2) -> e2.getValue().compareTo(e1.getValue());
 
         List<Integer> list = map.entrySet()
                                 .stream()
-                                .sorted(comparator)
+                                .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
                                 .map(Map.Entry :: getKey)
                                 .collect(Collectors.toList());
 
