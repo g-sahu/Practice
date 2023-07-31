@@ -11,27 +11,28 @@ public class LongestPalindromicSubstring {
     }
 
     public String longestPalindrome(String s) {
-        int len = s.length();
         int i = 0;
-        String max = s.substring(0, 1);
+        String max = "";
 
-        while (i < len-1) {
-            max = getPalindrome(s, len, max, i, i);
-            max = getPalindrome(s, len, max, i, i+1);
+        while (i < s.length()) {
+            max = getPalindrome(s, max, i, i);
+            max = getPalindrome(s, max, i, i+1);
             i++;
         }
 
         return max;
     }
 
-    private static String getPalindrome(String s, int len, String max, int l, int r) {
-        while (l >= 0 && r < len && s.charAt(l) == s.charAt(r)) {
-            if (max.length() < r - l +1) {
-                max = s.substring(l, r + 1);
+    private static String getPalindrome(String s, String max, int l, int r) {
+        while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
+            if (max.length() < r-l+1) {
+                max = s.substring(l, r+1);
             }
+
             l--;
             r++;
         }
+
         return max;
     }
 }
