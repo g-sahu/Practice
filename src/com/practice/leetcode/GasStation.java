@@ -9,8 +9,8 @@ import java.util.List;
 public class GasStation {
     public static void main(String[] args) {
         GasStation gs = new GasStation();
-        int[] gas  = {2,3,4};
-        int[] cost = {3,4,3};
+        int[] gas  = {2,0,1,2,3,4,0};
+        int[] cost = {0,1,0,0,0,0,11};
         System.out.println(gs.canCompleteCircuit(gas, cost));
     }
 
@@ -20,7 +20,7 @@ public class GasStation {
         int[] diff = new int[n];
 
         for (int i = 0; i < n; i++) {
-            if (gas[i] >= cost[i]) {
+            if ((gas[i] != 0 || cost[i] != 0) && gas[i] >= cost[i]) {
                 starts.add(i);
             }
 
