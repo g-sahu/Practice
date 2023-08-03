@@ -1,7 +1,5 @@
 package com.practice.leetcode;
 
-import java.util.Arrays;
-
 /*
 268. Missing Number
  */
@@ -14,7 +12,12 @@ public class MissingNumber {
     }
 
     public int missingNumber(int[] nums) {
-        int sum = Arrays.stream(nums).sum();
+        int sum = 0;
+
+        for (int n: nums) {
+            sum += n;
+        }
+
         int n = nums.length;
         int totalSum = n * (n+1)/2;
         return totalSum - sum;
