@@ -1,6 +1,8 @@
 package com.practice.leetcode;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 /*
 378. Kth Smallest Element in a Sorted Matrix
@@ -15,11 +17,11 @@ public class KthSmallestElement {
                 {12,13,15}
         };
 
-        System.out.println(kse.kthSmallest(grid, 8));
+        System.out.println(kse.kthSmallest2(grid, 8));
     }
 
     //Using array
-    public int kthSmallest(int[][] matrix, int k) {
+    public int kthSmallest1(int[][] matrix, int k) {
         int l = matrix.length;
         int[] nums = new int[l*l];
         int i = 0;
@@ -32,5 +34,25 @@ public class KthSmallestElement {
 
         Arrays.sort(nums);
         return nums[k-1];
+    }
+
+    //Using Priority Queue
+    public int kthSmallest2(int[][] matrix, int k) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
+
+        for (int[] row: matrix) {
+            for (int n: row) {
+                if (pq.size() == k) {
+                    if (n < pq.peek()) {
+                        pq.poll();
+                        pq.offer(n);
+                    }
+                } else {
+                    pq.offer(n);
+                }
+            }
+        }
+
+        return pq.peek();
     }
 }
