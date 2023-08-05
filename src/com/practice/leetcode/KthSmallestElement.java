@@ -12,12 +12,12 @@ public class KthSmallestElement {
     public static void main(String[] args) {
         KthSmallestElement kse = new KthSmallestElement();
         int[][] grid = {
-                {1,5,9},
-                {10,11,13},
-                {12,13,15}
+                {1,3,5},
+                {6,7,12},
+                {11,14,14}
         };
 
-        System.out.println(kse.kthSmallest2(grid, 8));
+        System.out.println(kse.kthSmallest3(grid, 6));
     }
 
     //Using array
@@ -54,5 +54,47 @@ public class KthSmallestElement {
         }
 
         return pq.peek();
+    }
+
+    //Using Binary Search
+    public int kthSmallest3(int[][] matrix, int k) {
+        int l = matrix.length;
+
+        if (l == 1) {
+            return matrix[0][0];
+        }
+
+        int r = k / l;
+        int c = k % l;
+
+        if (c == 0) {
+            c = l - 1;
+            r--;
+        } else {
+            c--;
+        }
+
+        for (int i = 1; i < l; i++) {
+            int[] nums = matrix[i-1];
+            int n = matrix[i][0];
+
+            if (n < nums[l-1]) {
+                while (n < nums[l - 1]) {
+                    int x = Arrays.binarySearch(nums, n);
+                    x = Math.abs(x+1);
+                    int temp = nums[x];
+                    nums[x] = n;
+                    matrix[i][0] = temp;
+                }
+
+                Arrays.sort(matrix[i]);
+            }
+
+            if (i == r+2) {
+                break;
+            }
+        }
+
+        return matrix[r][c];
     }
 }
