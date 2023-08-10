@@ -16,21 +16,18 @@ public class GroupAnagrams {
 
         for (String str : strs) {
             String key = sort(str);
-
             List<String> list = map.getOrDefault(key, new ArrayList<>());
             list.add(str);
             map.put(key, list);
         }
 
-        List<List<String>> groups = new ArrayList<>();
-        map.forEach((key, val) -> groups.add(val));
-        return groups;
+         return new ArrayList<>(map.values());
     }
 
     private static String sort(String s) {
         char[] chars = s.toCharArray();
         Arrays.sort(chars);
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder(s.length());
 
         for (char ch: chars) {
             sb.append(ch);
