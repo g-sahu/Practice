@@ -27,12 +27,6 @@ public class GroupAnagrams {
     private static String sort(String s) {
         char[] chars = s.toCharArray();
         Arrays.sort(chars);
-        StringBuilder sb = new StringBuilder(s.length());
-
-        for (char ch: chars) {
-            sb.append(ch);
-        }
-
-        return sb.toString();
+        return new String(chars);
     }
 }
