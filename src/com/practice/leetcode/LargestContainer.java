@@ -9,7 +9,6 @@ public class LargestContainer {
         LargestContainer lc = new LargestContainer();
         int[] height = {1,8,6,2,5,4,8,3,7};
         System.out.println(lc.maxArea(height));
-
     }
 
     //Using Brute Force
