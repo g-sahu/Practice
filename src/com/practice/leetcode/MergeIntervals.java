@@ -23,17 +23,11 @@ public class MergeIntervals {
 
     public int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
-
-        int i = 0;
-        int[] currentRow = intervals[i];
-        int start = currentRow[0];
-        int end = currentRow[1];
+        int start = intervals[0][0];
+        int end = intervals[0][1];
         List<int[]> merged = new ArrayList<>();
-        int l = intervals.length;
 
-        while (i < l) {
-            currentRow = intervals[i];
-
+        for (int[] currentRow: intervals) {
             if (end < currentRow[0]) {
                 merged.add(new int[]{start, end});
                 start = currentRow[0];
@@ -41,14 +35,9 @@ public class MergeIntervals {
             } else if (end < currentRow[1]) {
                 end = currentRow[1];
             }
-
-            if (i == l-1) {
-                merged.add(new int[]{start, end});
-            }
-
-            i++;
         }
 
+        merged.add(new int[]{start, end});
         return merged.toArray(new int[merged.size()][]);
     }
 }
