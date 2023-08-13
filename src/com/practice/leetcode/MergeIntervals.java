@@ -14,7 +14,7 @@ public class MergeIntervals {
         MergeIntervals mi = new MergeIntervals();
         int[][] intervals = {
                 {1,4},
-                {1,4}
+                {4,5}
         };
 
         int[][] merge = mi.merge(intervals);
@@ -31,31 +31,22 @@ public class MergeIntervals {
         Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
         List<int[]> merged = new ArrayList<>();
         int i = 1;
+        int start = intervals[0][0];
+        int end = intervals[0][1];
 
         while (i < l) {
-            int[] prevRow = intervals[i - 1];
             int[] currentRow = intervals[i];
-            int start = prevRow[0];
-            int end = prevRow[1];
 
-            while (currentRow[0] <= end) {
-                if (currentRow[1] > end) {
-                    end = currentRow[1];
-                }
-
-                i++;
-
-                if (i == l) {
-                    break;
-                }
-
-                currentRow = intervals[i];
+            if (end < currentRow[0]) {
+                merged.add(new int[]{start, end});
+                start = currentRow[0];
+                end = currentRow[1];
+            } else if (end < currentRow[1]) {
+                end = currentRow[1];
             }
 
-            merged.add(new int[]{start, end});
-
-            if (i == l - 1) {
-                merged.add(intervals[i]);
+            if (i == l-1) {
+                merged.add(new int[]{start, end});
             }
 
             i++;
