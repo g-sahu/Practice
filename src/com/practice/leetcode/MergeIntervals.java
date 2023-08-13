@@ -22,20 +22,17 @@ public class MergeIntervals {
     }
 
     public int[][] merge(int[][] intervals) {
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
+
+        int i = 0;
+        int[] currentRow = intervals[i];
+        int start = currentRow[0];
+        int end = currentRow[1];
+        List<int[]> merged = new ArrayList<>();
         int l = intervals.length;
 
-        if (l < 2) {
-            return intervals;
-        }
-
-        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
-        List<int[]> merged = new ArrayList<>();
-        int i = 1;
-        int start = intervals[0][0];
-        int end = intervals[0][1];
-
         while (i < l) {
-            int[] currentRow = intervals[i];
+            currentRow = intervals[i];
 
             if (end < currentRow[0]) {
                 merged.add(new int[]{start, end});
