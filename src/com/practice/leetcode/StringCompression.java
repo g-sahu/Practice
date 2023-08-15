@@ -1,7 +1,5 @@
 package com.practice.leetcode;
 
-import java.util.Stack;
-
 /*
 443. String Compression
  */
@@ -14,54 +12,32 @@ public class StringCompression {
     }
 
     public int compress(char[] chars) {
-        int l = chars.length;
-
-        if (l == 1) {
-            return l;
-        }
-
         char prev = chars[0];
         int c = 1;
         int start = 0;
 
-        for (int i = 1; i < l; i++) {
+        for (int i = 1; i < chars.length; i++) {
             if (chars[i] == prev) {
                 c++;
             } else {
                 chars[start++] = prev;
-
-                if (c > 1) {
-                    Stack<Character> stack = getChars(c);
-                    while (!stack.isEmpty()) {
-                        chars[start++] = stack.pop();
-                    }
-                }
-
+                start = updateCount(chars, c, start);
                 c = 1;
             }
-
             prev = chars[i];
         }
 
         chars[start++] = prev;
-        if (c > 1) {
-            Stack<Character> stack = getChars(c);
-            while (!stack.isEmpty()) {
-                chars[start++] = stack.pop();
-            }
-        }
-
+        start = updateCount(chars, c, start);
         return start;
     }
 
-    private static Stack<Character> getChars(int num) {
-        Stack<Character> stack = new Stack<>();
-
-        while (num != 0) {
-            stack.add((char) (num%10 + '0'));
-            num = num/10;
+    private static int updateCount(char[] chars, int c, int start) {
+        if (c > 1) {
+            for (char ch: Integer.toString(c).toCharArray()) {
+                chars[start++] = ch;
+            }
         }
-
-        return stack;
+        return start;
     }
 }
