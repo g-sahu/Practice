@@ -1,7 +1,5 @@
 package com.practice.leetcode;
 
-import java.util.Arrays;
-
 /*
 875. Koko Eating Bananas
  */
@@ -14,11 +12,14 @@ public class KokoEatingBananas {
     }
 
     public int minEatingSpeed(int[] piles, int h) {
-        Arrays.sort(piles);
-        int l = piles.length;
         int left = 1;
-        int right = piles[l - 1];
-        int min = piles[l - 1];
+        int right = piles[0];
+
+        for (int pile: piles) {
+            right = Math.max(pile, right);
+        }
+
+        int min = right;
 
         while (left <= right) {
             int mid = (left + right) / 2;
