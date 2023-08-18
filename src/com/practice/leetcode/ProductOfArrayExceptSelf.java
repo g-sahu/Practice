@@ -19,14 +19,14 @@ public class ProductOfArrayExceptSelf {
         int prod = 1;
 
         for (int i = 0; i < l; i++) {
-            prod *= i == 0 ? 1 : nums[i-1];
             ans[i] = prod;
+            prod *= nums[i];
         }
 
         prod = 1;
-        for (int i = l-1; i >= 0; i--) {
-            prod *= i == l-1 ? 1 : nums[i+1];
+        for (int i = l - 1; i >= 0; i--) {
             ans[i] *= prod;
+            prod *= nums[i];
         }
 
         return ans;
