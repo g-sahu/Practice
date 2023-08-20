@@ -5,20 +5,22 @@ package com.practice.leetcode;
  */
 public class BeautifulIntegers {
     public static void main(String[] args) {
-        int low = 10;
-        int high = 20;
-        int k = 3;
+        int low = 1;
+        int high = 1000000000;
+        int k = 1;
         BeautifulIntegers bi = new BeautifulIntegers();
         System.out.println(bi.numberOfBeautifulIntegers(low, high, k));
     }
 
     public int numberOfBeautifulIntegers(int low, int high, int k) {
+        int i = low;
         int c = 0;
 
-        for (int i = low; i <= high; i++) {
-            if (i % k == 0 && isEqual(i)) {
+        while (i <= high) {
+            if (isEqual(i) && i % k == 0) {
                 c++;
             }
+            i += k;
         }
 
         return c;
