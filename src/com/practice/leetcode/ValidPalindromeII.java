@@ -18,16 +18,13 @@ public class ValidPalindromeII {
         int c = 0;
 
         while (i <= j) {
-            if (s.charAt(i) != s.charAt(j)) {
-                i++;
+            if (s.charAt(i++) != s.charAt(j)) {
                 c++;
+                if (c > 1) {
+                    break;
+                }
             } else {
-                i++;
                 j--;
-            }
-
-            if (c > 1) {
-                break;
             }
         }
 
@@ -40,16 +37,13 @@ public class ValidPalindromeII {
         c = 0;
 
         while (i <= j) {
-            if (s.charAt(i) != s.charAt(j)) {
-                j--;
+            if (s.charAt(i) != s.charAt(j--)) {
                 c++;
+                if (c > 1) {
+                    break;
+                }
             } else {
                 i++;
-                j--;
-            }
-
-            if (c > 1) {
-                break;
             }
         }
 
