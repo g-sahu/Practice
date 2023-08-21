@@ -1,16 +1,20 @@
 package com.practice.leetcode;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 /*
 649. Dota2 Senate
  */
 public class Dota2Senate {
     public static void main(String[] args) {
-        String senate = "DRRDRDRDRDDRDRDR";
+        String senate = "RDD";
         Dota2Senate ds = new Dota2Senate();
-        System.out.println(ds.predictPartyVictory(senate));
+        System.out.println(ds.predictPartyVictory2(senate));
     }
 
-    public String predictPartyVictory(String senate) {
+    //Using Brute Force
+    public String predictPartyVictory1(String senate) {
         char[] chars = senate.toCharArray();
         int rsum = 0;
         int dsum = 0;
@@ -62,17 +66,18 @@ public class Dota2Senate {
         return -1;
     }
 
-    /*public String predictPartyVictory(String senate) {
+    //Using two queues
+    public String predictPartyVictory2(String senate) {
         char[] chars = senate.toCharArray();
-        Queue<Character> rq = new ArrayDeque<>();
-        Queue<Character> dq = new ArrayDeque<>();
+        Queue<Integer> rq = new ArrayDeque<>();
+        Queue<Integer> dq = new ArrayDeque<>();
 
         for (int i = 0; i <senate.length(); i++) {
             char ch = senate.charAt(i);
             if (ch == 'R') {
-                rq.offer(ch);
+                rq.offer(i);
             } else {
-                dq.offer(ch);
+                dq.offer(i);
             }
         }
 
@@ -80,19 +85,19 @@ public class Dota2Senate {
         while (!rq.isEmpty() && !dq.isEmpty()) {
             char ch = chars[i];
 
-            if (ch == 'R') {
-                dq.poll();
-            } else {
-                rq.poll();
+            if (ch != 'X') {
+                if (ch == 'R') {
+                    chars[dq.poll()] = 'X';
+                    rq.offer(rq.poll());
+                } else {
+                    chars[rq.poll()] = 'X';
+                    dq.offer(dq.poll());
+                }
             }
 
-            if (i == senate.length()-1) {
-                i = 0;
-            } else {
-                i++;
-            }
+            i = i == chars.length-1 ? 0 : i+1;
         }
 
         return rq.isEmpty() ? "Dire" : "Radiant";
-    }*/
+    }
 }
