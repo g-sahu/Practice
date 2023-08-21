@@ -1,46 +1,58 @@
 package com.practice.leetcode;
 
+/*
+680. Valid Palindrome II
+ */
 public class ValidPalindromeII {
 
     public static void main(String[] args) {
         ValidPalindromeII v = new ValidPalindromeII();
-        String s = "radaer";
+        String s = "radar";
         System.out.println(v.validPalindrome(s));
     }
 
     public boolean validPalindrome(String s) {
         int l = s.length();
-
-        for (int i = -1; i < l; i++) {
-            if (isPalindrome(s, i)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private boolean isPalindrome(String s, int skip) {
-        int l = s.length();
         int i = 0;
-        int j = l - 1;
+        int j = l-1;
+        int c = 0;
 
-        while(i < j) {
-            if (i == skip) {
+        while (i <= j) {
+            if (s.charAt(i) != s.charAt(j)) {
                 i++;
-                continue;
-            }
-
-            if (j == skip) {
+                c++;
+            } else {
+                i++;
                 j--;
-                continue;
             }
 
-            if(s.charAt(i++) != s.charAt(j--)) {
-                return false;
+            if (c > 1) {
+                break;
             }
         }
 
-        return true;
+        if (c <= 1) {
+            return true;
+        }
+
+        i = 0;
+        j = l-1;
+        c = 0;
+
+        while (i <= j) {
+            if (s.charAt(i) != s.charAt(j)) {
+                j--;
+                c++;
+            } else {
+                i++;
+                j--;
+            }
+
+            if (c > 1) {
+                break;
+            }
+        }
+
+        return c <= 1;
     }
 }
