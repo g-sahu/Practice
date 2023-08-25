@@ -8,11 +8,12 @@ import java.util.List;
  */
 public class Maximum69Number {
 
-    public int maximum69Number (int num) {
+    //Using list
+    public int maximum69Number1(int num) {
         List<Integer> list = new ArrayList<>();
 
         while (num != 0) {
-            list.add(0, num%10);
+            list.add(0, num % 10);
             num /= 10;
         }
 
@@ -24,9 +25,34 @@ public class Maximum69Number {
         }
 
         int n = 0;
+        for (int x : list) {
+            n = n * 10 + x;
+        }
 
-        for (int x: list) {
-            n = n*10 + x;
+        return n;
+    }
+
+    //Using String.replaceFirst()
+    public int maximum69Number2(int num) {
+        String s = Integer.toString(num);
+        String n = s.replaceFirst("6", "9");
+        return Integer.parseInt(n);
+    }
+
+    //Using char array 9669
+    public int maximum69Number3(int num) {
+        char[] digits = Integer.toString(num).toCharArray();
+
+        for (int i = 0; i < digits.length; i++) {
+            if (digits[i] == '6') {
+                digits[i] = '9';
+                break;
+            }
+        }
+
+        int n = 0;
+        for (char x : digits) {
+            n = (n * 10) + (x - '0');
         }
 
         return n;
