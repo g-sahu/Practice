@@ -8,7 +8,7 @@ import java.math.BigInteger;
 public class SignFunction {
 
     //Using BigInteger
-    public int arraySign(int[] nums) {
+    public int arraySign1(int[] nums) {
         BigInteger prod = BigInteger.ONE;
 
         for (int num : nums) {
@@ -22,5 +22,35 @@ public class SignFunction {
         }
 
         return prod.compareTo(BigInteger.ZERO);
+    }
+
+    //Counting negatives
+    public int arraySign2(int[] nums) {
+        int n = 0;
+
+        for (int num: nums) {
+            if (num == 0) {
+                return 0;
+            } else if (num < 0){
+                n++;
+            }
+        }
+
+        return n % 2 == 0 ? 1 : -1;
+    }
+
+    //Change the sign on encountering a -ve
+    public int arraySign3(int[] nums) {
+        int sign = 1;
+
+        for (int num: nums) {
+            if (num == 0) {
+                return 0;
+            } else if (num < 0){
+                sign *= -1;
+            }
+        }
+
+        return sign;
     }
 }
