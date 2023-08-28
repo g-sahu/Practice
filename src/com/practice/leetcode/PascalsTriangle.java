@@ -11,7 +11,7 @@ public class PascalsTriangle {
     public static void main(String[] args) {
         PascalsTriangle pt = new PascalsTriangle();
         List<List<Integer>> triangle = pt.generate(5);
-        triangle.forEach(System.out :: println);
+        LeetUtils.printNestedLists(triangle);
     }
 
     public List<List<Integer>> generate(int numRows) {
