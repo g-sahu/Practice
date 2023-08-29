@@ -1,26 +1,28 @@
 package com.practice.datastructures.trees;
 
+import com.practice.leetcode.TreeNode;
+
 class BinarySearchTree {
-    Node root;
+    TreeNode root;
 
     BinarySearchTree(int root) {
-        this.root = new Node(root);
+        this.root = new TreeNode(root);
     }
 
-    void addNode(int data) {
-        Node temp = root;
+    void addNode(int val) {
+        TreeNode temp = root;
 
         while(true) {
-            if(data < temp.data) {
+            if(val < temp.val) {
                 if(temp.left == null) {
-                    temp.left = new Node(data);
+                    temp.left = new TreeNode(val);
                     break;
                 } else {
                     temp = temp.left;
                 }
-            } else if(data > temp.data) {
+            } else if(val > temp.val) {
                 if(temp.right == null) {
-                    temp.right = new Node(data);
+                    temp.right = new TreeNode(val);
                     break;
                 } else {
                     temp = temp.right;

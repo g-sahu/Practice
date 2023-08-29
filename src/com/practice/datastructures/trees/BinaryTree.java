@@ -1,13 +1,15 @@
 package com.practice.datastructures.trees;
 
+import com.practice.leetcode.TreeNode;
+
 class BinaryTree {
-    Node root;
+    TreeNode root;
 
     BinaryTree(int root) {
-        this.root = new Node(root);
+        this.root = new TreeNode(root);
     }
 
-    void addNode(Node parent, Node child, Position position) {
+    void addNode(TreeNode parent, TreeNode child, Position position) {
         switch (position) {
             case LEFT:
                 insertLeftChild(parent, child);
@@ -19,11 +21,11 @@ class BinaryTree {
         }
     }
 
-    private void insertLeftChild(Node parent, Node child) {
+    private void insertLeftChild(TreeNode parent, TreeNode child) {
         parent.left = child;
     }
 
-    private void insertRightChild(Node parent, Node child) {
+    private void insertRightChild(TreeNode parent, TreeNode child) {
         parent.right = child;
     }
 

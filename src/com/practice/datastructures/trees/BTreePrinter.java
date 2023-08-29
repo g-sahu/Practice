@@ -1,5 +1,7 @@
 package com.practice.datastructures.trees;
 
+import com.practice.leetcode.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,12 +11,12 @@ import static java.util.Collections.singletonList;
 
 class BTreePrinter {
 
-    static <T extends Comparable<?>> void printNode(Node root) {
+    static <T extends Comparable<?>> void printNode(TreeNode root) {
         int maxLevel = maxLevel(root);
         printNodeInternal(singletonList(root), 1, maxLevel);
     }
 
-    private static <T extends Comparable<?>> void printNodeInternal(List<Node> nodes, int level, int maxLevel) {
+    private static <T extends Comparable<?>> void printNodeInternal(List<TreeNode> nodes, int level, int maxLevel) {
         if (nodes.isEmpty() || isAllElementsNull(nodes)) {
             return;
         }
@@ -23,13 +25,12 @@ class BTreePrinter {
         int edgeLines = (int) pow(2, (max(floor - 1, 0)));
         int firstSpaces = (int) pow(2, (floor)) - 1;
         int betweenSpaces = (int) pow(2, (floor + 1)) - 1;
-
         printWhitespaces(firstSpaces);
+        List<TreeNode> newNodes = new ArrayList<>();
 
-        List<Node> newNodes = new ArrayList<>();
-        for (Node node : nodes) {
+        for (TreeNode node : nodes) {
             if (node != null) {
-                System.out.print(node.data);
+                System.out.print(node.val);
                 newNodes.add(node.left);
                 newNodes.add(node.right);
             } else {
@@ -44,14 +45,15 @@ class BTreePrinter {
         System.out.println();
 
         for (int i = 1; i <= edgeLines; i++) {
-            for (int j = 0; j < nodes.size(); j++) {
+            for (TreeNode node : nodes) {
                 printWhitespaces(firstSpaces - i);
-                if (nodes.get(j) == null) {
+
+                if (node == null) {
                     printWhitespaces(edgeLines + edgeLines + i + 1);
                     continue;
                 }
 
-                if (nodes.get(j).left != null) {
+                if (node.left != null) {
                     System.out.print("/");
                 } else {
                     printWhitespaces(1);
@@ -59,7 +61,7 @@ class BTreePrinter {
 
                 printWhitespaces(i + i - 1);
 
-                if (nodes.get(j).right != null) {
+                if (node.right != null) {
                     System.out.print("\\");
                 } else {
                     printWhitespaces(1);
@@ -80,7 +82,7 @@ class BTreePrinter {
         }
     }
 
-    private static <T extends Comparable<?>> int maxLevel(Node node) {
+    private static <T extends Comparable<?>> int maxLevel(TreeNode node) {
         if (node == null) {
             return 0;
         }

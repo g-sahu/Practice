@@ -13,7 +13,6 @@ public class BSTExample {
         bst.addNode(35);
         bst.addNode(42);
         bst.addNode(18);
-
         printNode(bst.root);
     }
 }
