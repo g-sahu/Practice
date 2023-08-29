@@ -9,13 +9,14 @@ import java.util.List;
 public class Subsets {
 
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4};
+        int[] nums = {1,2,3};
         Subsets o = new Subsets();
-        List<List<Integer>> subsets = o.subsets(nums);
+        List<List<Integer>> subsets = o.subsets2(nums);
         LeetUtils.printNestedLists(subsets);
     }
 
-    public List<List<Integer>> subsets(int[] nums) {
+    //Using binary conversion
+    public List<List<Integer>> subsets1(int[] nums) {
         int limit = (int) Math.pow(2, nums.length);
         List<List<Integer>> subsets = new ArrayList<>(limit);
 
@@ -36,5 +37,23 @@ public class Subsets {
         }
 
         return subsets;
+    }
+
+    //Backtracking
+    public List<List<Integer>> subsets2(int[] nums) {
+        //Arrays.sort(nums);
+        List<List<Integer>> list = new ArrayList<>();
+        backtrack(list, new ArrayList<>(), nums, 0);
+        return list;
+    }
+
+    private void backtrack(List<List<Integer>> list , List<Integer> tempList, int [] nums, int start) {
+        list.add(new ArrayList<>(tempList));
+
+        for (int i = start; i < nums.length; i++) {
+            tempList.add(nums[i]);
+            backtrack(list, tempList, nums, i + 1);
+            tempList.remove(tempList.size() - 1);
+        }
     }
 }
