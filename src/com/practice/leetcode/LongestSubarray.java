@@ -6,26 +6,26 @@ package com.practice.leetcode;
 public class LongestSubarray {
 
     public static void main(String[] args) {
-        int[] nums = {1,1,1};
+        int[] nums = {1,1,0,1};
         LongestSubarray o = new LongestSubarray();
         System.out.println(o.longestSubarray(nums));
     }
 
     public int longestSubarray(int[] nums) {
         int max = 0;
-        int z = 0;
         int j = 0;
+        int z = 0;
         int l = nums.length;
 
         while (j < l) {
-            if (nums[j] == 1) {
-                max++;
-            } else if (z == 0){
-                z++;
-                max++;
-            } else {
-                break;
+            if (nums[j] == 0) {
+                if (z == 1) {
+                    break;
+                } else {
+                    z++;
+                }
             }
+            max++;
             j++;
         }
 
