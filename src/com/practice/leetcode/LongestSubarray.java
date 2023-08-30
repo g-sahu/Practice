@@ -18,10 +18,8 @@ public class LongestSubarray {
         int l = nums.length;
 
         while (j < l) {
-            if (nums[j] == 0) {
-                if (++z == 2) {
-                    break;
-                }
+            if (nums[j] == 0 && ++z == 2) {
+                break;
             }
             max++;
             j++;
