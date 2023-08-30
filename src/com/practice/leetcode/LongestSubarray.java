@@ -19,10 +19,8 @@ public class LongestSubarray {
 
         while (j < l) {
             if (nums[j] == 0) {
-                if (z == 1) {
+                if (++z == 2) {
                     break;
-                } else {
-                    z++;
                 }
             }
             max++;
