@@ -1,9 +1,7 @@
 package com.practice.leetcode;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /*
@@ -12,26 +10,25 @@ import java.util.Set;
 public class IntersectionOfTwoArrays {
 
     //Using HashSet
-    public int[] intersection1(int[] nums1, int[] nums2) {
+    public int[] intersection(int[] nums1, int[] nums2) {
         Set<Integer> set = new HashSet<>();
-        List<Integer> ans = new ArrayList<>();
+        Set<Integer> ans = new HashSet<>();
 
-        for (int j : nums1) {
-            set.add(j);
+        for (int i : nums1) {
+            set.add(i);
         }
 
-        for (int j : nums2) {
-            if (set.contains(j)) {
-                ans.add(j);
-                set.remove(j);
+        for (int i : nums2) {
+            if (set.contains(i)) {
+                ans.add(i);
             }
         }
 
         int[] arr = new int[ans.size()];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = ans.get(i);
+        int i = 0;
+        for (int n: ans) {
+            arr[i++] = n;
         }
-
         return arr;
     }
 
