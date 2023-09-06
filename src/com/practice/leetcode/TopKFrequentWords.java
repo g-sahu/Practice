@@ -1,10 +1,10 @@
 package com.practice.leetcode;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /*
 692. Top K Frequent Words
@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class TopKFrequentWords {
 
     //Using HashMap and Sorting
-    public List<String> topKFrequent(String[] words, int k) {
+    public List<String> topKFrequent1(String[] words, int k) {
         Map<String, Integer> map = new HashMap<>();
 
         for (String s : words) {
@@ -20,19 +20,16 @@ public class TopKFrequentWords {
             map.put(s, f);
         }
 
-        Comparator<Map.Entry<String, Integer>> comp = (e1, e2) -> {
-            int compare = e2.getValue().compareTo(e1.getValue());
+        Comparator<String> comp = (s1, s2) -> {
+            int compare = map.get(s2).compareTo(map.get(s1));
             if (compare == 0) {
-                return e1.getKey().compareTo(e2.getKey());
+                return s1.compareTo(s2);
             }
             return compare;
         };
 
-        return map.entrySet()
-                  .stream()
-                  .sorted(comp)
-                  .limit(k)
-                  .map(Map.Entry :: getKey)
-                  .collect(Collectors.toList());
+        List<String> candidates = new ArrayList<>(map.keySet());
+        candidates.sort(comp);
+        return candidates.subList(0, k);
     }
 }
