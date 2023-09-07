@@ -1,8 +1,6 @@
 package com.practice.leetcode;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /*
@@ -10,41 +8,27 @@ import java.util.Map;
  */
 public class DegreeOfAnArray {
 
-    public static void main(String[] args) {
-
-    }
-
     public int findShortestSubArray(int[] nums) {
-        Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> freq = new HashMap<>();
+        Map<Integer, Integer> left = new HashMap<>();
+        Map<Integer, Integer> right = new HashMap<>();
         int max = 0;
 
-        for (int n : nums) {
-            int f = map.getOrDefault(n, 0) + 1;
+        for(int i=0; i<nums.length; i++) {
+            int n = nums[i];
+            int f = freq.getOrDefault(n, 0) + 1;
             max = Math.max(max, f);
-            map.put(n, f);
-        }
-
-        List<Integer> list = new ArrayList<>();
-
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if (entry.getValue() == max) {
-                list.add(entry.getKey());
-            }
+            freq.put(n, f);
+            left.putIfAbsent(n, i);
+            right.put(n, i);
         }
 
         int min = nums.length;
 
-        for (int n : list) {
-            int start = nums.length;
-            int end = -1;
-
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] == n) {
-                    start = Math.min(start, i);
-                    end = Math.max(end, i);
-                }
+        for(int n: freq.keySet()) {
+            if(freq.get(n) == max) {
+                min = Math.min(min, right.get(n) - left.get(n) + 1);
             }
-            min = Math.min(min, end - start + 1);
         }
 
         return min;
