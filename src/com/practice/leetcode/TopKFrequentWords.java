@@ -1,7 +1,6 @@
 package com.practice.leetcode;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -17,7 +16,7 @@ public class TopKFrequentWords {
     public static void main(String[] args) {
         String[] words = {"i","love","leetcode","i","love","coding"};
         TopKFrequentWords o = new TopKFrequentWords();
-        List<String> list = o.topKFrequent(words, 2);
+        List<String> list = o.topKFrequent2(words, 2);
         System.out.println(list);
     }
 
@@ -75,30 +74,5 @@ public class TopKFrequentWords {
         }
 
         return ans;
-    }
-
-    public List<String> topKFrequent(String[] words, int k) {
-        Map<String, Integer> map = new HashMap<>();
-        for (String word : words) {
-            map.put(word, map.getOrDefault(word, 0) + 1);
-        }
-
-        Comparator<String> comp = (w1, w2) -> map.get(w1).equals(map.get(w2))
-                ? w2.compareTo(w1)
-                : map.get(w1) - map.get(w2);
-
-        PriorityQueue<String> h = new PriorityQueue<>(comp);
-
-        for (String word : map.keySet()) {
-            h.offer(word);
-            if (h.size() > k)
-                h.poll();
-        }
-
-        List<String> res = new ArrayList<>();
-        while (!h.isEmpty())
-            res.add(h.poll());
-        Collections.reverse(res);
-        return res;
     }
 }
