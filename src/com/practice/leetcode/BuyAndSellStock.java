@@ -6,21 +6,15 @@ package com.practice.leetcode;
 public class BuyAndSellStock {
 
     public int maxProfit(int[] nums) {
-        int l = nums.length;
+        int max = 0;
+        int pmax = 0;
 
-        if(l == 1) {
-            return 0;
-        }
-
-        int max = nums[l-1];
-        int pmax = nums[l-1] - nums[l-2];
-
-        for(int i=l-2; i>0; i--) {
+        for(int i=nums.length-1; i>0; i--) {
             max = Math.max(max, nums[i]);
             int p = max - nums[i-1];
             pmax = Math.max(pmax, p);
         }
 
-        return Math.max(pmax, 0);
+        return pmax;
     }
 }
