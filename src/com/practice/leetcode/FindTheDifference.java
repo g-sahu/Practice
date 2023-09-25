@@ -10,10 +10,10 @@ import java.util.Map;
 public class FindTheDifference {
 
     public static void main(String[] args) {
-        String s = "abcd";
-        String t = "abcde";
+        String s = "fghewf";
+        String t = "gheewff";
         FindTheDifference o = new FindTheDifference();
-        System.out.println(o.findTheDifference3(s, t));
+        System.out.println(o.findTheDifference5(s, t));
     }
 
     //Using sorting
@@ -61,7 +61,7 @@ public class FindTheDifference {
         return map.keySet().stream().findFirst().get();
     }
 
-    //Using ASCII sum
+    //Using ASCII diff
     public char findTheDifference3(String s, String t) {
         int sum1 = getCharSum(s);
         int sum2 = getCharSum(t);
@@ -76,5 +76,29 @@ public class FindTheDifference {
         }
 
         return sum;
+    }
+
+    //Using ASCII diff
+    public char findTheDifference4(String s, String t) {
+        int diff = 0;
+
+        for(int i=0; i<s.length(); i++) {
+            diff += s.charAt(i) - t.charAt(i);
+        }
+
+        diff = t.charAt(t.length()-1) - diff;
+        return (char) diff;
+    }
+
+    //Using XOR
+    public char findTheDifference5(String s, String t) {
+        int diff = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            diff ^= s.charAt(i) ^ t.charAt(i);
+        }
+
+        diff = diff ^ t.charAt(t.length()-1);
+        return (char) diff;
     }
 }
