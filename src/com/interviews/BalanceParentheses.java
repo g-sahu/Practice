@@ -5,7 +5,7 @@ import java.util.Stack;
 public class BalanceParentheses {
 
 	public static void main(String[] args) {
-		Stack<Character> stack = new Stack<Character>();
+		Stack<Character> stack = new Stack<>();
 		final char SQUARE_OPEN = '[';
 		final char SQUARE_CLOSED = ']';
 		final char CURLY_OPEN = '{';
@@ -14,7 +14,7 @@ public class BalanceParentheses {
 		final char ROUND_CLOSED = ')';
 		
 		String str = "{{[[(())]]}}";
-		char arr[] = str.toCharArray();
+		char[] arr = str.toCharArray();
 		char item;
 		int i = 0;
 		

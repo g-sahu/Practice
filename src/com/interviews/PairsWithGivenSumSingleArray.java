@@ -14,7 +14,7 @@ public class PairsWithGivenSumSingleArray {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         int n, x;
-        int a[];
+        int[] a;
 
         for (int i=0; i<t; i++) {
             n = sc.nextInt();
@@ -34,7 +34,7 @@ public class PairsWithGivenSumSingleArray {
      * Find a pair in a sorted array of integers
      * -1 2 4 5 7, x = 9
      */
-    private static void findPairWithGivenSumSorted(int a[], int x) {
+    private static void findPairWithGivenSumSorted(int[] a, int x) {
         int low = 0;
         int high = a.length - 1;
         int sum;
@@ -59,7 +59,7 @@ public class PairsWithGivenSumSingleArray {
      * Find a pair in an unsorted array with of integers
      * -1 2 -4 5 7, x = 9
      */
-    private static void findPairWithGivenSumUnSorted(int a[], int x) {
+    private static void findPairWithGivenSumUnSorted(int[] a, int x) {
         Set<Integer> complements = new HashSet<>();
 
         for(int i: a) {

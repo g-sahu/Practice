@@ -38,7 +38,7 @@ public class LargestNumber {
 		return Long.parseLong(largest);
 	}
 	
-	static int getLargestIndex(String arr[], int start, int end) {
+	static int getLargestIndex(String[] arr, int start, int end) {
 		int max = Integer.parseInt(arr[start]);
 		int index = 0;
 

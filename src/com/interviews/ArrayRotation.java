@@ -8,7 +8,7 @@ public class ArrayRotation {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		int a[] = new int[n];
+		int[] a = new int[n];
 		
 		for(int i=0; i<n; i++) {
 			a[i] = sc.nextInt();
@@ -19,9 +19,9 @@ public class ArrayRotation {
 		rotateArray(a, d);
 	}
 	
-	static void rotateArray(int a[], int d) {
+	static void rotateArray(int[] a, int d) {
 		int l = a.length;
-		int arr[] = new int[l];
+		int[] arr = new int[l];
 		int x = l-d, y = 0;
 		
 		for(int i=0; i<l; i++) {

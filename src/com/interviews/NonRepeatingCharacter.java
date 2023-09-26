@@ -23,7 +23,7 @@ public class NonRepeatingCharacter {
 	
 	static char getNonRepeatingChar(String str, int n) {
 		char ch;
-		Map<Character, Integer> map = new LinkedHashMap<Character, Integer>();
+		Map<Character, Integer> map = new LinkedHashMap<>();
 		
 		for(int i=0; i<str.length(); i++) {
 			ch = str.charAt(i);
