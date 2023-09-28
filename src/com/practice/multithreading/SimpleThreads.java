@@ -2,7 +2,7 @@ package com.practice.multithreading;
 
 public class SimpleThreads {
 
-    public static void main(String args[]) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         // Delay, in milliseconds before we interrupt MessageLoop thread (default one hour).
         long patience = 10000;
 
@@ -50,7 +50,7 @@ public class SimpleThreads {
 
     private static class MessageLoop implements Runnable {
         public void run() {
-            String importantInfo[] = {"Mares eat oats",
+            String[] importantInfo = {"Mares eat oats",
                     "Does eat oats",
                     "Little lambs eat ivy",
                     "A kid will eat ivy too"};

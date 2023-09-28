@@ -7,14 +7,14 @@ import java.util.Set;
 public class SetExample {
 
 	public static void main(String[] args) {
-        Set<Integer> a = new HashSet<Integer>();
+        Set<Integer> a = new HashSet<>();
         a.add(1);
         a.add(2);
         a.add(3);
         a.add(4);
         a.add(5);
         
-        Set<Integer> b = new HashSet<Integer>();
+        Set<Integer> b = new HashSet<>();
         b.add(4);
         b.add(5);
         b.add(6);
@@ -31,7 +31,7 @@ public class SetExample {
 	}
 	
 	static Set<Integer> union(Set<Integer> a, Set<Integer> b) {
-		Set<Integer> union = new HashSet<Integer>(a);
+		Set<Integer> union = new HashSet<>(a);
 		Iterator<Integer> itr = b.iterator();
 		Integer x;
 		
@@ -47,7 +47,7 @@ public class SetExample {
 	}
 	
 	static Set<Integer> intersection(Set<Integer> a, Set<Integer> b) {
-		Set<Integer> intersection = new HashSet<Integer>();
+		Set<Integer> intersection = new HashSet<>();
 		Iterator<Integer> itr = a.iterator();
 		Integer x;
 		
@@ -63,7 +63,7 @@ public class SetExample {
 	}
 	
 	static Set<Integer> diffAB(Set<Integer> a, Set<Integer> b) {
-		Set<Integer> diffAB = new HashSet<Integer>();
+		Set<Integer> diffAB = new HashSet<>();
 		Iterator<Integer> itr = a.iterator();
 		Integer x;
 		
@@ -79,7 +79,7 @@ public class SetExample {
 	}
 	
 	static Set<Integer> diffBA(Set<Integer> a, Set<Integer> b) {
-		Set<Integer> diffBA = new HashSet<Integer>();
+		Set<Integer> diffBA = new HashSet<>();
 		Iterator<Integer> itr = b.iterator();
 		Integer x;
 		

@@ -1,4 +1,4 @@
-package com.practice.java;
+package com.practice.designpatterns;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +36,7 @@ class ClassB implements MyClass {
 	public void show() {
 		System.out.println(getClass().getName());
 		
-		Map<String, String> map = new HashMap<String, String>();
+		Map<String, String> map = new HashMap<>();
 		map.put(null, null);
 		map.put(null, "Not null");
 		System.out.println(map.get(null));
