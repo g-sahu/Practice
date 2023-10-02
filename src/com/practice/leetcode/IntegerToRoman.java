@@ -34,19 +34,19 @@ public class IntegerToRoman {
     public String intToRoman(int num) {
         StringBuilder sb = new StringBuilder();
 
-        while(num != 0) {
+        while (num != 0) {
             int d = map.containsKey(num) ? num : getDivisor(num);
-            int q = num/d;
+            int q = num / d;
             sb.append(map.get(d).repeat(q));
-            num = num%d;
+            num = num % d;
         }
 
         return sb.toString();
     }
 
     private int getDivisor(int n) {
-        for(int k: map.keySet()) {
-            if(n > k) {
+        for (int k : map.keySet()) {
+            if (n > k) {
                 return k;
             }
         }
