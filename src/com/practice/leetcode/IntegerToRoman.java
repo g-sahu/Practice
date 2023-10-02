@@ -31,12 +31,7 @@ public class IntegerToRoman {
         while(num != 0) {
             int d = map.containsKey(num) ? num : getDivisor(num);
             int q = num/d;
-            String s = map.get(d);
-
-            for(int i=1; i<=q; i++) {
-                sb.append(s);
-            }
-
+            sb.append(map.get(d).repeat(q));
             num = num%d;
         }
 
