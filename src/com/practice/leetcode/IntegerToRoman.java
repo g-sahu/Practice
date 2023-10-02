@@ -1,5 +1,6 @@
 package com.practice.leetcode;
 
+import java.util.Comparator;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -7,7 +8,7 @@ import java.util.TreeMap;
  * 12. Integer to Roman
  */
 public class IntegerToRoman {
-    private static final Map<Integer, String> map = new TreeMap<>();
+    private static final Map<Integer, String> map = new TreeMap<>(Comparator.reverseOrder());
 
     static {
         map.put(1, "I");
@@ -25,6 +26,11 @@ public class IntegerToRoman {
         map.put(1000, "M");
     }
 
+    public static void main(String[] args) {
+        IntegerToRoman o = new IntegerToRoman();
+        System.out.println(o.intToRoman(69));
+    }
+
     public String intToRoman(int num) {
         StringBuilder sb = new StringBuilder();
 
@@ -39,15 +45,11 @@ public class IntegerToRoman {
     }
 
     private int getDivisor(int n) {
-        int d = 1;
-
         for(int k: map.keySet()) {
             if(n > k) {
-                d = k;
-            } else {
-                return d;
+                return k;
             }
         }
-        return d;
+        return -1;
     }
 }
