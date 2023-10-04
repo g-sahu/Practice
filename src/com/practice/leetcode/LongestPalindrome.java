@@ -3,69 +3,34 @@ package com.practice.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-2131. Longest Palindrome by Concatenating Two Letter Words
+/**
+ * 409. Longest Palindrome
  */
 public class LongestPalindrome {
 
-    public static void main(String[] args) {
-        String[] words = {"dd","aa","bb","dd","aa","dd","bb","dd","aa","cc","bb","cc","dd","cc"};
-        LongestPalindrome o = new LongestPalindrome();
-        System.out.println(o.longestPalindrome(words));
-    }
+    public int longestPalindrome(String s) {
+        Map<Character, Integer> map = new HashMap<>();
 
-    public int longestPalindrome(String[] words) {
-        Map<String, Integer> map = new HashMap<>();
-
-        for (String word : words) {
-            int freq = map.getOrDefault(word, 0) + 1;
-            map.put(word, freq);
+        for(int i=0; i<s.length(); i++) {
+            char ch = s.charAt(i);
+            int f = map.getOrDefault(ch, 0) + 1;
+            map.put(ch, f);
         }
 
-        int len = 0;
+        int l = 0;
+        boolean flag = false;
 
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            String word = entry.getKey();
-            String mirror = getMirror(word);
-
-            if (map.containsKey(mirror)) {
-                if (word.equals(mirror)) {
-                    if (entry.getValue() > 1) {
-                        int c = map.get(mirror);
-                        int pairs = c/2;
-                        len += (pairs * 4);
-                        updateMap(map, word, pairs);
-                        updateMap(map, mirror, pairs);
-                    }
-                } else {
-                    int c = map.get(mirror);
-                    int pairs = Math.min(entry.getValue(), c);
-                    len += (pairs * 4);
-                    updateMap(map, word, pairs);
-                    updateMap(map, mirror, pairs);
-                }
+        for(int v: map.values()) {
+            if(v % 2 == 0) {
+                l += v;
+            } else if (!flag) {
+                l += v;
+                flag = true;
+            } else {
+                l = l + (v-1);
             }
         }
 
-        for (Map.Entry<String, Integer> entry: map.entrySet()) {
-            if (entry.getValue() != 0) {
-                String word = entry.getKey();
-                if (word.equals(getMirror(word))) {
-                    len += 2;
-                    break;
-                }
-            }
-        }
-
-        return len;
-    }
-
-    private static void updateMap(Map<String, Integer> map, String key, int val) {
-        int newVal = map.get(key) - val;
-        map.replace(key, newVal);
-    }
-
-    private static String getMirror(String s) {
-        return new StringBuilder(s).reverse().toString();
+        return l;
     }
 }
