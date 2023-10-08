@@ -1,84 +1,53 @@
 package com.practice.leetcode;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.PriorityQueue;
 
+/**
+ * 911. Online Election
+ */
 public class TopVotedCandidate {
-    private int[] persons;
-    private int[] times;
-    private int[] winners;
+    int[] times;
+    int[] persons;
+    int[] winners;
 
     public TopVotedCandidate(int[] persons, int[] times) {
         this.persons = persons;
         this.times = times;
         winners = new int[persons.length];
-
-        for (int i = 0; i < persons.length; i++) {
-            winners[i] = topVoted(i);
-        }
-    }
-
-    public static void main(String[] args) {
-        int[] persons = new int[]{};
-        int[] times = new int[]{};
-        TopVotedCandidate obj = new TopVotedCandidate(persons, times);
-        System.out.println(obj.q(72272));
     }
 
     public int q(int t) {
-        int l = search(t);
-        return winners[l];
-    }
+        int x = Arrays.binarySearch(times, t);
+        x = x < 0 ? Math.abs(x + 2) : x;
 
-    private Integer topVoted(int l) {
+        if (winners[x] != -1) {
+            return winners[x];
+        }
+
         Map<Integer, Integer> map = new HashMap<>();
-        int topVoted = -1;
-        int max = 0;
 
-        for (int i = 0; i <= l; i++) {
-            int p = persons[i];
-            int newVal = map.getOrDefault(p, 0) + 1;
-
-            map.put(p, newVal);
-
-            if (newVal >= max) {
-                max = newVal;
-                topVoted = p;
-            }
+        for (int i = 0; i <= x; i++) {
+            int f = map.getOrDefault(persons[i], 0) + 1;
+            map.put(persons[i], f);
         }
 
-        return topVoted;
-    }
+        Comparator<Integer> comp = (a, b) -> {
+            int f1 = map.get(a);
+            int f2 = map.get(b);
+            return f1 == f2 ? -1 : Integer.compare(f2, f1);
+        };
 
-    private int search(int t) {
-        int beg = 0;
-        int end = times.length - 1;
+        PriorityQueue<Integer> pq = new PriorityQueue<>(comp);
 
-        if (beg == end) {
-            return beg;
+        for (int i = 0; i <= x; i++) {
+            pq.offer(persons[i]);
         }
 
-        if (t == times[beg]) {
-            return beg;
-        }
-
-        if (t >= times[end]) {
-            return end;
-        }
-
-        while (beg <= end) {
-            int mid = (beg + end)/2;
-
-            if(t == times[mid]) {
-                return mid;
-            } else if (t < times[mid]) {
-                end = mid - 1;
-            } else {
-                beg = mid + 1;
-            }
-        }
-
-        return end;
+        return pq.peek();
     }
 
 }
