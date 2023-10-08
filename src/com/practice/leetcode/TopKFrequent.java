@@ -6,13 +6,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-/*
-347. Top K Frequent Elements
+/**
+ * 347. Top K Frequent Elements
  */
 public class TopKFrequent {
     public static void main(String[] args) {
         TopKFrequent tf = new TopKFrequent();
-        int[] nums = {4,1,-1,2,-1,2,3};
+        int[] nums = {1,1,1,2,2,3};
         System.out.println(Arrays.toString(tf.topKFrequent2(nums, 2)));
     }
 
@@ -38,24 +38,21 @@ public class TopKFrequent {
     public int[] topKFrequent2(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<>();
 
-        for (int n : nums) {
-            int val = map.getOrDefault(n, 0) + 1;
-            map.put(n, val);
+        for (int num : nums) {
+            int f = map.getOrDefault(num, 0) + 1;
+            map.put(num, f);
         }
 
-        Comparator<Integer> comparator = Comparator.comparing(map :: get);
-        PriorityQueue<Integer> pq = new PriorityQueue<>(comparator);
+        Comparator<Integer> comp = (a, b) -> Integer.compare(map.get(a), map.get(b));
+        PriorityQueue<Integer> pq = new PriorityQueue<>(comp);
 
-        map.forEach((key, val) -> {
-            if (pq.size() == k) {
-                if (map.get(key).compareTo(map.get(pq.peek())) > 0) {
-                    pq.poll();
-                    pq.offer(key);
-                }
-            } else {
-                pq.offer(key);
+        for (int key : map.keySet()) {
+            pq.offer(key);
+
+            if (pq.size() > k) {
+                pq.poll();
             }
-        });
+        }
 
         return pq.stream()
                  .mapToInt(Integer :: intValue)
