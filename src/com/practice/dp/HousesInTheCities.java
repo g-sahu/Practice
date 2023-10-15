@@ -8,7 +8,7 @@ public class HousesInTheCities {
 		Scanner sc = new Scanner(System.in);
 		int t = sc.nextInt();
 		int n;
-		int arr[];
+		int[] arr;
 		int q, l, r;
 		
 		

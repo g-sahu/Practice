@@ -12,7 +12,7 @@ public class BobAnIdiot {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
-		List<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<>();
 		String str;
 		
 		for(int i=0; i<n; i++) {
@@ -26,16 +26,16 @@ public class BobAnIdiot {
 	
 	static void printCode(String str, List<String> list) {
 		Iterator<String> itr = list.iterator();
-		String s[];
+		String[] s;
 		String ch = "?";
-		
-		while(itr.hasNext()) {
+
+		while (itr.hasNext()) {
 			s = itr.next().split(" ");
 			str = str.replace(s[0], ch);
 			str = str.replace(s[1], s[0]);
 			str = str.replace(ch, s[1]);
 		}
-		
+
 		System.out.println(str);
 	}
 

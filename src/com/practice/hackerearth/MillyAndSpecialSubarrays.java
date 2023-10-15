@@ -8,7 +8,7 @@ public class MillyAndSpecialSubarrays {
 		Scanner sc = new Scanner(System.in);
 		int t = sc.nextInt();
 		int n;
-		long arr[];
+		long[] arr;
 		
 		for(int i=0; i<t; i++) {
 			n = sc.nextInt();
@@ -24,20 +24,19 @@ public class MillyAndSpecialSubarrays {
 		sc.close();
 	}
 	
-	private static int calculateSpecialSubarrays(long arr[]) {
+	private static int calculateSpecialSubarrays(long[] arr) {
 		int n = arr.length;
-		int memo[] = new int[n];
+		int[] memo = new int[n];
 		int c = 0;
 		
 		for(int i=0; i<n; i++) {
 			if((i != 0) && (arr[i] == arr[i-1])) {
 				memo[i] = memo[i-1] + 1;
-				c = c + memo[i];
-			} else {
+            } else {
 				memo[i] = 1;
-				c = c + memo[i];
-			}
-		}
+            }
+            c = c + memo[i];
+        }
 		
 		return c;
 	}

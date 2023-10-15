@@ -7,19 +7,19 @@ public class Subsequences {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		int arr[] = new int[n];
-		
-		for(int i=0; i<n; i++) {
+		int[] arr = new int[n];
+
+		for (int i = 0; i < n; i++) {
 			arr[i] = sc.nextInt();
 		}
-		
+
 		int k = sc.nextInt();
 		sc.close();
-		
+
 		printSubsequences(arr, k);
 	}
 
-	static void printSubsequences(int arr[], int k) {
+	static void printSubsequences(int[] arr, int k) {
 		int l = arr.length;
 		
 		/*for(int x=0; x<l; x++) {
@@ -35,12 +35,12 @@ public class Subsequences {
 			
 			System.out.println();
 		}*/
-		
+
 		int x = l - k;
-		
-		for(int i=0; i<k; i++) {
-			for(int j=i+1; j<l; j++) {
-				
+
+		for (int i = 0; i < k; i++) {
+			for (int j = i + 1; j < l; j++) {
+
 			}
 		}
 	}

@@ -8,24 +8,24 @@ public class ChangeCase {
 
 	public static void main(String[] args) {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
+
 		try {
 			String str = br.readLine();
-			char arr[] = str.toCharArray();
+			char[] arr = str.toCharArray();
 			int i = 0;
-			
-			for(Character c: arr) {
-				if(Character.isLowerCase(c)) {
+
+			for (Character c : arr) {
+				if (Character.isLowerCase(c)) {
 					arr[i] = (char) (c - 32);
-				} else if(Character.isUpperCase(c)){
+				} else if (Character.isUpperCase(c)) {
 					arr[i] = (char) (c + 32);
 				}
-				
+
 				System.out.print(arr[i]);
 				i++;
 			}
-		} catch(IOException ioe) {
-			
+		} catch (IOException ioe) {
+
 		}
 	}
 }

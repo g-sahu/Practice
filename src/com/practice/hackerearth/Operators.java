@@ -13,7 +13,7 @@ public class Operators {
 		System.out.println("x << y: " + (x << y));
 		System.out.println("x < y: " + (x < y));
 		System.out.println("x > y: " + (x > y));
-		
+
 		System.out.println(Integer.MAX_VALUE / (x >>> y));
 
 	}

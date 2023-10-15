@@ -1,7 +1,6 @@
 package com.practice.hackerearth;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class RemoveFriends {
@@ -10,40 +9,39 @@ public class RemoveFriends {
 		Scanner sc = new Scanner(System.in);
 		int t = sc.nextInt();
 		int n, k;
-		Integer arr[];
+		Integer[] arr;
 		ArrayList<Integer[]> outputList = new ArrayList<>();
-		
-		for(int i=0; i<t; i++) {
+
+		for (int i = 0; i < t; i++) {
 			n = sc.nextInt();
 			k = sc.nextInt();
-			
+
 			arr = new Integer[n];
-			
-			for(int j=0; j<n; j++) {
+
+			for (int j = 0; j < n; j++) {
 				arr[j] = sc.nextInt();
 			}
-			
+
 			removeFriend(arr, k);
 			outputList.add(arr);
 		}
-		
+
 		sc.close();
-		Iterator<Integer[]> itr = outputList.iterator();
-		
-		while(itr.hasNext()) {
-			arr = itr.next();
-			
-			for(Integer i: arr) {
-				if(i != -1) {
-					System.out.print(i + " ");
-				}
-			}
-			
-			System.out.println();
-		}
+
+        for (Integer[] integers : outputList) {
+            arr = integers;
+
+            for (Integer i : arr) {
+                if (i != -1) {
+                    System.out.print(i + " ");
+                }
+            }
+
+            System.out.println();
+        }
 	}
 	
-	static void removeFriend(Integer arr[], int k) {
+	static void removeFriend(Integer[] arr, int k) {
 		boolean deleteFriend = false;
 		int l = arr.length;
 		int c = 0, j;

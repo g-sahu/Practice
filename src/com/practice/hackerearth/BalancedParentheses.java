@@ -8,7 +8,7 @@ import java.util.Stack;
 public class BalancedParentheses {
 
 	public static void main(String[] args) {
-		ArrayList<Integer> input = new ArrayList<Integer>();
+		ArrayList<Integer> input = new ArrayList<>();
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		Integer x;
@@ -19,29 +19,29 @@ public class BalancedParentheses {
 		
 		sc.close();
 		
-		Stack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> stack = new Stack<>();
 		Iterator<Integer> itr = input.iterator();
 		int c = 0, longest = 0;
 		
 		while(itr.hasNext()) {
 			x = itr.next();
-			
-			if(Integer.signum(x) == 1) {
+
+			if (Integer.signum(x) == 1) {
 				stack.push(x);
-			} else if(!stack.isEmpty()) {
-				if(stack.pop() == -x) {
+			} else if (!stack.isEmpty()) {
+				if (stack.pop() == -x) {
 					c = c + 2;
-					
-					if(stack.isEmpty()) {
-						if(!itr.hasNext()) {
-							longest = c > longest ? c : longest;
+
+					if (stack.isEmpty()) {
+						if (!itr.hasNext()) {
+							longest = Math.max(c, longest);
 							break;
 						} else {
-							longest = c > longest ? c : longest;
+							longest = Math.max(c, longest);
 							//c = 0;
 						}
 					} else {
-						longest = c > longest ? c : longest;
+						longest = Math.max(c, longest);
 					}
 				} else {
 					c = 0;
@@ -49,7 +49,7 @@ public class BalancedParentheses {
 				}
 			} else {
 				c = 0;
-			}			
+			}
 		}
 		
 		System.out.println(longest);

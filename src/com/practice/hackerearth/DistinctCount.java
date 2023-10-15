@@ -11,27 +11,27 @@ public class DistinctCount {
 		int t = sc.nextInt();
 		int n, x, size;
 		Set<Integer> set;
-		
-		for(int i=1; i<=t; i++) {
+
+		for (int i = 1; i <= t; i++) {
 			n = sc.nextInt();
 			x = sc.nextInt();
-			set = new HashSet<Integer>();
-			
-			for(int j=1; j<=n; j++) {
+			set = new HashSet<>();
+
+			for (int j = 1; j <= n; j++) {
 				set.add(sc.nextInt());
 			}
-			
+
 			size = set.size();
-			
-			if(size == x) {
+
+			if (size == x) {
 				System.out.println("Good");
-			} else if(size < x) {
+			} else if (size < x) {
 				System.out.println("Bad");
 			} else {
 				System.out.println("Average");
 			}
 		}
-		
+
 		sc.close();
 	}
 }

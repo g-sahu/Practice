@@ -1,13 +1,12 @@
 package com.practice.hackerearth;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class TheCastleGate {
 
 	public static void main(String[] args) {
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		ArrayList<Integer> list = new ArrayList<>();
 		Scanner sc = new Scanner(System.in);
 		int t = sc.nextInt();
 		int n;
@@ -18,28 +17,27 @@ public class TheCastleGate {
 		}
 
 		sc.close();
-		Iterator<Integer> itr = list.iterator();
 
-		while(itr.hasNext()) {
-			System.out.println(itr.next());
-		}
+        for (Integer integer : list) {
+            System.out.println(integer);
+        }
 	}
 	
 	private static int getNumberOfPairs(int n) {
 		int res = 0, j;
-		
-		for(int i=1; i<n; i++) {
+
+		for (int i = 1; i < n; i++) {
 			j = i + 1;
-			
-			while(j <= n) {
-				if((i ^ j) <= n) {
+
+			while (j <= n) {
+				if ((i ^ j) <= n) {
 					res++;
 				}
-				
+
 				j++;
 			}
 		}
-		
+
 		return res;
 	}
 

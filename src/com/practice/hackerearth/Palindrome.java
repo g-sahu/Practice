@@ -8,7 +8,7 @@ public class Palindrome {
 
 	public static void main(String[] args) {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
+
 		try {
 			String s = br.readLine();
 			System.out.println(isPalindrome(s) ? "YES" : "NO");
@@ -18,15 +18,15 @@ public class Palindrome {
 	}
 	
 	private static boolean isPalindrome(String s) {
-		char ar[] = s.toCharArray();
+		char[] ar = s.toCharArray();
 		int i = ar.length - 1;
-		
-		for(Character c: ar) {
-			if(c != s.charAt(i--)) {
+
+		for (Character c : ar) {
+			if (c != s.charAt(i--)) {
 				return false;
 			}
 		}
-		
+
 		return true;
 	}
 }

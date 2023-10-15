@@ -11,43 +11,42 @@ public class Anagram {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		ArrayList<String> list = new ArrayList<String>();
-		List<String> outList = new ArrayList<String>();
+		ArrayList<String> list = new ArrayList<>();
+		List<String> outList = new ArrayList<>();
 		String s = br.readLine();
-		
-		while(!s.isEmpty()) {
+
+		while (!s.isEmpty()) {
 			list.add(s);
 			s = br.readLine();
 		}
-		
-		String listArr[] = new String[list.size()];
+
+		String[] listArr = new String[list.size()];
 		Iterator<String> itr = list.iterator();
-		int i = 0, k = 0;
-		
-		while(itr.hasNext()) {
-			listArr[i++] = itr.next(); 
+		int i = 0, k;
+
+		while (itr.hasNext()) {
+			listArr[i++] = itr.next();
 		}
-		
-		for(int j=0; j<listArr.length-1; j++) {
+
+		for (int j = 0; j < listArr.length - 1; j++) {
 			k = j + 1;
-			
 			String s1 = listArr[j];
 			String s2 = listArr[k];
-			
-			if(isAnagram(s1, s2)) {
-				if(s1.charAt(0) < s2.charAt(0)) {
+
+			if (isAnagram(s1, s2)) {
+				if (s1.charAt(0) < s2.charAt(0)) {
 					outList.add(s1 + "," + s2);
 				} else {
 					outList.add(s2 + "," + s1);
 				}
 			}
-			
+
 		}
-		
+
 		itr = outList.iterator();
-		
-		while(itr.hasNext()) {
-			System.out.println(itr.next()); 
+
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
 		}
 	}
 	
