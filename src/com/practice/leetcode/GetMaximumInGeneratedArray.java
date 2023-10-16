@@ -13,8 +13,9 @@ public class GetMaximumInGeneratedArray {
         int[] nums = new int[n+1];
         nums[0] = 0;
         nums[1] = 1;
+        int max = 0;
 
-        for(int i=1; i<=n/2; i++) {
+        for(int i=1; i<=n; i++) {
             int x = 2 * i;
 
             if(2 <= x && x <= n) {
@@ -24,12 +25,8 @@ public class GetMaximumInGeneratedArray {
             if(2 <= x+1 && x+1 <= n) {
                 nums[x+1] = nums[i] + nums[i+1];
             }
-        }
 
-        int max = 0;
-
-        for(int x: nums) {
-            max = Math.max(max, x);
+            max = Math.max(max, nums[i]);
         }
 
         return max;
