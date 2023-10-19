@@ -14,15 +14,14 @@ public class MeetingRoomsII {
         Queue<Integer> pq = new PriorityQueue<>();
         pq.offer(matrix[0][1]);
 
-        for (int i = 1; i < matrix.length; i++) {
+        for(int i=1; i<matrix.length; i++) {
             int[] row = matrix[i];
 
-            if (row[0] < pq.peek()) {
-                pq.offer(row[1]);
-            } else {
+            if(row[0] >= pq.peek()) {
                 pq.poll();
-                pq.offer(row[1]);
             }
+
+            pq.offer(row[1]);
         }
 
         return pq.size();
