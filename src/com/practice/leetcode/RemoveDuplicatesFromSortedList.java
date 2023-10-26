@@ -1,12 +1,12 @@
 package com.practice.leetcode;
 
-/*
-83. Remove Duplicates from Sorted List
+/**
+ * 83. Remove Duplicates from Sorted List
  */
-public class RemoveDuplicates {
+public class RemoveDuplicatesFromSortedList {
 
     public static void main(String[] args) {
-        RemoveDuplicates rd = new RemoveDuplicates();
+        RemoveDuplicatesFromSortedList rd = new RemoveDuplicatesFromSortedList();
         int[] list = {1,1,3,3};
         ListNode head = LeetUtils.buildLinkedList(list);
         ListNode listNode = rd.deleteDuplicates(head);
