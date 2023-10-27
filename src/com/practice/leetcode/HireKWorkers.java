@@ -1,10 +1,12 @@
 package com.practice.leetcode;
 
+import com.practice.leetcode.utils.Pair;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-/*
-2462. Total Cost to Hire K Workers
+/**
+ * 2462. Total Cost to Hire K Workers
  */
 public class HireKWorkers {
     public static void main(String[] args) {
@@ -14,30 +16,32 @@ public class HireKWorkers {
     }
 
     public long totalCost(int[] costs, int k, int candidates) {
-        Comparator<Pair> comparator = (o1, o2) -> Comparator.comparingInt(Pair :: getKey)
+        /*Comparator<Pair<Integer, Integer>> comparator = (p1, p2) -> Comparator.comparingInt()
                                                             .thenComparingInt(Pair :: getValue)
-                                                            .compare(o1, o2);
-        PriorityQueue<Pair> pq = new PriorityQueue<>(comparator);
+                                                            .compare(o1, o2);*/
+        Comparator<Pair<Integer, Integer>> comparator = (o1, o2) -> 0; //FIXME
+
+        PriorityQueue<Pair<Integer, Integer>> pq = new PriorityQueue<>(comparator);
         long sum = 0;
         int i = -1, j = costs.length;
 
         for (int c = 0; c < candidates; c++) {
             i++;
             j--;
-            add(pq, new Pair(costs[i], i));
-            add(pq, new Pair(costs[j], j));
+            add(pq, new Pair<>(costs[i], i));
+            add(pq, new Pair<>(costs[j], j));
         }
 
         for (int c = 1; c <= k; c++) {
-            Pair pair = pq.poll();
+            Pair<Integer, Integer> pair = pq.poll();
             sum += pair.getKey();
             int index = pair.getValue();
 
             if (index < costs.length) {
                 if (index <= i) {
-                    add(pq, new Pair(costs[++i], i));
+                    add(pq, new Pair<>(costs[++i], i));
                 } else if (index >= j) {
-                    add(pq, new Pair(costs[--j], j));
+                    add(pq, new Pair<>(costs[--j], j));
                 }
             }
         }
@@ -45,35 +49,9 @@ public class HireKWorkers {
         return sum;
     }
 
-    private void add(PriorityQueue<Pair> pq, Pair pair) {
+    private void add(PriorityQueue<Pair<Integer, Integer>> pq, Pair<Integer, Integer> pair) {
         if (!pq.contains(pair)) {
             pq.offer(pair);
         }
-    }
-}
-
-class Pair {
-    int key;
-    int value;
-
-    public Pair(int key, int value) {
-        this.key = key;
-        this.value = value;
-    }
-
-    public int getKey() {
-        return key;
-    }
-
-    public void setKey(int key) {
-        this.key = key;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
     }
 }
