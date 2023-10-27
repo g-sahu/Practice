@@ -15,7 +15,7 @@ public class PascalsTriangleII {
             return Collections.singletonList(1);
         }
 
-        List<Integer> plist = getRow(i-1);
+        List<Integer> plist = getRow1(i-1);
         List<Integer> list = new ArrayList<>();
         list.add(1);
 
