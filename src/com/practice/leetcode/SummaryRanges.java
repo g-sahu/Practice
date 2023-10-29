@@ -23,7 +23,7 @@ public class SummaryRanges {
         for(int i=1; i<l; i++) {
             if(nums[i] != end+1) {
                 if(start != end) {
-                    sb.append("->").append(nums[i - 1]);
+                    sb.append("->").append(end);
                 }
                 list.add(sb.toString());
                 start = nums[i];
