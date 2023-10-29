@@ -8,7 +8,8 @@ import java.util.List;
  */
 public class SummaryRanges {
 
-    public List<String> summaryRanges(int[] nums) {
+    //Using StringBuilder
+    public List<String> summaryRanges1(int[] nums) {
         List<String> list = new ArrayList<>();
         int l = nums.length;
 
@@ -37,6 +38,32 @@ public class SummaryRanges {
         }
 
         list.add(sb.toString());
+        return list;
+    }
+
+    //Without StringBuilder
+    public List<String> summaryRanges2(int[] nums) {
+        List<String> list = new ArrayList<>();
+        int l = nums.length;
+
+        if(l == 0) {
+            return list;
+        }
+
+        int start = nums[0];
+        int end = nums[0];
+
+        for(int i=1; i<l; i++) {
+            if(nums[i] != end+1) {
+                String range = start == end ? String.valueOf(start) : start + "->" + end;
+                list.add(range);
+                start = nums[i];
+            }
+            end = nums[i];
+        }
+
+        String range = start == end ? String.valueOf(start) : start + "->" + end;
+        list.add(range);
         return list;
     }
 }
