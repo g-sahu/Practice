@@ -1,10 +1,11 @@
 package com.contests.hackerearth;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
+
+import static java.util.Collections.reverseOrder;
 
 public class BestSubsequence {
 
@@ -13,7 +14,7 @@ public class BestSubsequence {
 
 		int t = sc.nextInt();
 		int n;
-		long arr[];
+		long[] arr;
 		
 		for(int i=0; i<t; i++) {
 			n = sc.nextInt();
@@ -30,23 +31,23 @@ public class BestSubsequence {
 		sc.close();
 	}
 	
-	static void printSubsequence(long arr[]) {
-		List<Long> negatives = new ArrayList<Long>();
+	static void printSubsequence(long[] arr) {
+		List<Long> negatives = new ArrayList<>();
 		int l = arr.length;
 		long sum = 0;
-		
-		for(int i=0; i<l; i++) {
-			if(arr[i] > 0) {
-				sum = sum + arr[i];
-			} else {
-				negatives.add(arr[i]);
-			}
-		}
+
+        for (long value : arr) {
+            if (value > 0) {
+                sum = sum + value;
+            } else {
+                negatives.add(value);
+            }
+        }
 		
 		if(sum % 2 != 0) {
 			System.out.println(sum);
 		} else {
-			Collections.sort(negatives, Collections.reverseOrder());
+			negatives.sort(reverseOrder());
 			
 			Iterator<Long> itr = negatives.iterator();
 			long n;
