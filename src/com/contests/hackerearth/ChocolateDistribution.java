@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import static java.lang.Math.max;
+
 public class ChocolateDistribution {
 	private static Map<String, Long> memo = new HashMap<>();
 
@@ -12,7 +14,7 @@ public class ChocolateDistribution {
 		Scanner sc = new Scanner(System.in);
 		int t = sc.nextInt();
 		int n, m;
-		int arr[];
+		int[] arr;
 		
 		for(int i=0; i<t; i++) {
 			n = sc.nextInt();
@@ -29,26 +31,24 @@ public class ChocolateDistribution {
 		sc.close();
 	}
 	
-	private static long maxChocolates(int arr[], int m) {
+	private static long maxChocolates(int[] arr, int m) {
 		int n = arr.length;
 		long max = 0;
-		String key = null;
-		
-		for(int i=0; i<n; i++) {
+
+        for(int i=0; i<n; i++) {
 			for(int j=i; j<n; j++) {
-				key = i + "," + j;
-				
-				if(!memo.containsKey(key)) {
+                String key = i + "," + j;
+
+                if(!memo.containsKey(key)) {
 					if(i == j) {
 						memo.put(key, (long) arr[j]);
 					} else {
 						memo.put(key, memo.get(i + "," + (j-1)) + (long) arr[j]);
 					}
 				}
-				
-				
+
 				if(memo.get(key) != 0 && memo.get(key) % m == 0) {
-					max = memo.get(key) / m > max ? memo.get(key) / m : max;
+					max = max(memo.get(key) / m, max);
 				}
 			}
 		}

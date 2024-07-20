@@ -1,7 +1,8 @@
 package com.contests.hackerearth;
 
-import java.util.Arrays;
 import java.util.Scanner;
+
+import static java.util.Arrays.sort;
 
 public class DigitsSum {
 
@@ -10,14 +11,14 @@ public class DigitsSum {
 		int n = sc.nextInt();
 		int q = sc.nextInt();
 		int t, k;
-		int nums[] = new int[n];
+		int[] nums = new int[n];
 		int output[] = new int[q];
 		
 		for(int i=0; i<n; i++) {
 			nums[i] = (int) getSumOfDigits(sc.nextLong());
 		}
 		
-		Arrays.sort(nums);
+		sort(nums);
 		
 		for(int j=0; j<q; j++) {
 			t = sc.nextInt();

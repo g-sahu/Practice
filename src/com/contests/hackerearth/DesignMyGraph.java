@@ -1,18 +1,16 @@
 package com.contests.hackerearth;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class DesignMyGraph {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
 		int t = sc.nextInt();
 		int n;
 		ArrayList<Integer[]> outputList = new ArrayList<>();
-		Integer arr[];
+		Integer[] arr;
 		
 		for(int i=0; i<t; i++) {
 			n = sc.nextInt();
@@ -26,14 +24,13 @@ public class DesignMyGraph {
 		}
 		
 		sc.close();
-		Iterator<Integer[]> itr = outputList.iterator();
-		
-		while(itr.hasNext()) {
-			isGraph(itr.next());
-		}
+
+        for (Integer[] integers : outputList) {
+            isGraph(integers);
+        }
 	}
 	
-	static void isGraph(Integer arr[]) {
+	static void isGraph(Integer[] arr) {
 		int sum = 0;
 		int n = arr.length;
 		

@@ -2,6 +2,7 @@ package com.contests.hackerearth;
 
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
@@ -33,32 +34,31 @@ import java.util.TreeMap;
  *
  */
 public class BSequence {
-	private static Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
+	private static Map<Integer, Integer> map = new TreeMap<>();
 	private static int size, max;
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		int x=0, q=0, val=0;
-		
-		for(int i=0; i<n; i++) {
-			x = sc.nextInt();
-			
-			if(map.containsKey(x)) {
+
+        for(int i=0; i<n; i++) {
+            int x = sc.nextInt();
+
+            if(map.containsKey(x)) {
 				map.put(x, map.get(x) + 1);
 			} else {
 				map.put(x, 1);
 			}
 			
-			max = x > max ? x : max;
+			max = Math.max(x, max);
 			size++;
 		}
-		
-		q = sc.nextInt();
+
+        int q = sc.nextInt();
 		
 		for(int i=0; i<q; i++) {
-			val = sc.nextInt();
-			modifySequence(val);
+            int val = sc.nextInt();
+            modifySequence(val);
 			System.out.println(size);
 		}
 		
@@ -81,16 +81,15 @@ public class BSequence {
 	}
 	
 	static void printSequence() {
-		Set<Map.Entry<Integer, Integer>> entrySet = map.entrySet();
-		int arr[] = new int[size];
+		Set<Entry<Integer, Integer>> entrySet = map.entrySet();
+		int[] arr = new int[size];
 		Iterator<Map.Entry<Integer, Integer>> mapIterator = entrySet.iterator();
-		Map.Entry<Integer, Integer> entry = null;
-		int beg = 0, end = size - 1;
+        int beg = 0, end = size - 1;
 		int val;
 		
 		while(mapIterator.hasNext()) {
-			entry = mapIterator.next();
-			val = entry.getValue();
+            Entry<Integer, Integer> entry = mapIterator.next();
+            val = entry.getValue();
 			arr[beg++] = entry.getKey();
 			
 			if(val == 2) {
