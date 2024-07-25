@@ -11,17 +11,20 @@ public class BubbleSort {
     }
 
     private static void bubbleSort(int[] nums) {
-        int l = nums.length - 1;
+        int l = nums.length;
 
-        while (l >= 0) {
-            for (int i = 0; i < l; i++) {
-                if (nums[i] > nums[i + 1]) {
-                    int temp = nums[i];
-                    nums[i] = nums[i + 1];
-                    nums[i + 1] = temp;
+        while(l > 0) {
+            int i=0, j=1;
+
+            while(j < l) {
+                if(nums[i] > nums[j]) {
+                    int t = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = t;
                 }
+                i++;
+                j++;
             }
-
             l--;
         }
     }
