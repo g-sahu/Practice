@@ -68,7 +68,11 @@ class Z extends D {
 
 public class DecoratorExample {
     public static void main( String[] args ) {
-        I[] array = {new X(new A()), new Y(new X(new A())), new Z(new Y(new X(new A())))};
+        I[] array = {
+                new X(new A()),
+                new Y(new X(new A())),
+                new Z(new Y(new X(new A())))
+        };
 
         for (I obj : array) {
             obj.doIt();

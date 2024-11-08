@@ -8,8 +8,8 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-/*
-692. Top K Frequent Words
+/**
+ * 692. Top K Frequent Words
  */
 public class TopKFrequentWords {
 
