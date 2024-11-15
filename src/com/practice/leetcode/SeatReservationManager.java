@@ -9,7 +9,7 @@ import java.util.Queue;
 public class SeatReservationManager {
     private Queue<Integer> pq;
 
-    public SeatManager(int n) {
+    public SeatReservationManager(int n) {
         pq = new PriorityQueue<>();
         for(int i=1; i<=n; i++) {
             pq.offer(i);
