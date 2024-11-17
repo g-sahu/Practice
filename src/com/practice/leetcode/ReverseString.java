@@ -2,16 +2,28 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
+/**
+ * 344. Reverse String
+ */
 public class ReverseString {
 
-    public static void main(String[] args) {
-        ReverseString rs = new ReverseString();
-        char[] s = new char[]{'g','a','u','r','a','v'};
-        System.out.println("Before: " + Arrays.toString(s));
-        rs.reverseString(s);
+    //Recursive
+    public void reverseString(char[] s) {
+        reverse(s, 0, s.length-1);
     }
 
-    public void reverseString(char[] s) {
+    void reverse(char[] s, int a, int b) {
+        if(a >= b) {
+            return;
+        }
+        char t = s[a];
+        s[a] = s[b];
+        s[b] = t;
+        reverse(s, ++a, --b);
+    }
+
+    //Iterative
+    public void reverseString1(char[] s) {
         int l = s.length;
         short i = 0;
         int j = l-1;
