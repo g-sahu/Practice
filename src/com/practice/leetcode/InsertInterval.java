@@ -47,13 +47,7 @@ public class InsertInterval {
         }
 
         list.add(new int[]{start, end});
-        int[][] ans = new int[list.size()][2];
-        i = 0;
-
-        for (int[] row : list) {
-            ans[i++] = row;
-        }
-
-        return ans;
+        return list.toArray(new int[list.size()][]);
     }
+
 }
