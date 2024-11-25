@@ -32,7 +32,7 @@ public class HousesInTheCities {
 		sc.close();
 	}
 	
-	private static int calculateHouses(int arr[], int l, int r) {
+	private static int calculateHouses(int[] arr, int l, int r) {
 		int sum = 0;
 		
 		for(int i=l-1; i<=r-1; i++) {

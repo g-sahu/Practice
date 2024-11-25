@@ -13,7 +13,7 @@ public class InsertionSort {
 
 	public static void main(String[] args) throws FileNotFoundException {
         Scanner sc = new Scanner(new File("C:\\Users\\Gaurav\\Desktop\\Array.txt"));
-        int arr[] = new int[100000];
+        int[] arr = new int[100000];
         int x = 0;
 
         while (sc.hasNext()) {

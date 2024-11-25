@@ -129,7 +129,7 @@ public class DoublyLinkedList {
     public static class Node {
         private Node prev;
         private Node next;
-        private int data;
+        private final int data;
 
         private Node(int data) {
             this.data = data;

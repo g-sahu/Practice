@@ -17,14 +17,14 @@ public class Greatest {
 		System.out.println(findGreatest(arr));
 	}
 	
-	private static int findGreatest(int arr[]) {
+	private static int findGreatest(int[] arr) {
 		int max=arr[0];
-		
-		for (int i=0; i<arr.length; i++) {
-			if (arr[i] > max) {
-				max = arr[i];
-			}
-		}		
+
+        for (int j : arr) {
+            if (j > max) {
+                max = j;
+            }
+        }
 
 		return max;
 	}

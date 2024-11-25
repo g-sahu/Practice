@@ -3,9 +3,9 @@ package com.practice.datastructures.maps;
 import java.util.LinkedList;
 
 public class LRUCacheImpl {
-    private LinkedList<Object> keys;
-    private LinkedList<Object> values;
-    private int cacheSize;
+    private final LinkedList<Object> keys;
+    private final LinkedList<Object> values;
+    private final int cacheSize;
 
     LRUCacheImpl(int cacheSize) {
         values = new LinkedList<>();

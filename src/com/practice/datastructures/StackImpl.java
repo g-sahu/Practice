@@ -1,7 +1,7 @@
 package com.practice.datastructures;
 
 public class StackImpl {
-	public static void main(String args[]) throws Exception {
+	public static void main(String[] args) throws Exception {
 		MyStack stack = new MyStack();
 		stack.push(1);
 		stack.push(2);
@@ -16,7 +16,7 @@ public class StackImpl {
 }
 
 class MyStack {
-	Integer arr[];
+	Integer[] arr;
 	int top, bufferSize = 10, size;
 	
 	MyStack() {

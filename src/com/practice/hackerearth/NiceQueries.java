@@ -8,7 +8,7 @@ public class NiceQueries {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		int q = sc.nextInt();
-		int arr[] = new int[n];
+		int[] arr = new int[n];
 		int type, k, y;
 		boolean exists;
 

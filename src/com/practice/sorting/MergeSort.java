@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class MergeSort {
 
     public static void main(String[] args) {
-        int arr[] = {5, 7, 3, 8, 6, 10, 23, 14, 18};
+        int[] arr = {5, 7, 3, 8, 6, 10, 23, 14, 18};
         int l = arr.length;
 
         System.out.println(Arrays.toString(arr));
@@ -29,7 +29,7 @@ public class MergeSort {
         }
     }
 
-    static void merge(int arr[], int start, int mid, int end) {
+    static void merge(int[] arr, int start, int mid, int end) {
 
     }
 

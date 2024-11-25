@@ -9,7 +9,7 @@ public class MaximumOccurence {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		char s[] = sc.nextLine().toCharArray();
+		char[] s = sc.nextLine().toCharArray();
 		sc.close();
 
 		Map<Character, Integer> map = new HashMap<>();

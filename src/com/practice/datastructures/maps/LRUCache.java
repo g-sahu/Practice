@@ -8,9 +8,9 @@ import java.util.Map;
 import static com.practice.datastructures.linkedlists.DoublyLinkedList.Node;
 
 class LRUCache {
-    private Map<Integer, Node> keys;
-    private DoublyLinkedList values;
-    private int cacheSize;
+    private final Map<Integer, Node> keys;
+    private final DoublyLinkedList values;
+    private final int cacheSize;
 
     LRUCache(int cacheSize) {
         values = new DoublyLinkedList();
