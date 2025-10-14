@@ -70,7 +70,7 @@ public class TopKFrequentWords {
 
         List<String> ans = new ArrayList<>();
         while (!pq.isEmpty()) {
-            ans.add(0, pq.poll());
+            ans.addFirst(pq.poll());
         }
 
         return ans;

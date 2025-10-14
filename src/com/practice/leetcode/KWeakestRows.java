@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-/*
-1337. The K Weakest Rows in a Matrix
+/**
+ * 1337. The K Weakest Rows in a Matrix
  */
 public class KWeakestRows {
 
@@ -42,7 +42,7 @@ public class KWeakestRows {
 
         for (int i = 0; i < k; i++) {
             List<Integer> list = map.get(pq.poll());
-            indices[i] = list.remove(0);
+            indices[i] = list.removeFirst();
         }
 
         return indices;
