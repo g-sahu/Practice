@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
-/*
-102. Binary Tree Level Order Traversal
+/**
+ * 102. Binary Tree Level Order Traversal
  */
 public class BinaryTreeLevelOrderTraversal {
 
