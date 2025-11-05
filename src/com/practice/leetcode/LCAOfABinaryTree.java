@@ -7,7 +7,9 @@ import java.util.List;
  * 236. Lowest Common Ancestor of a Binary Tree
  */
 public class LCAOfABinaryTree {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+
+    // With extra space
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
         List<TreeNode> l1 = new ArrayList<>();
         List<TreeNode> l2 = new ArrayList<>();
         preorder(root, p, l1);
@@ -17,14 +19,11 @@ public class LCAOfABinaryTree {
         TreeNode lca = root;
 
         for(int i=0; i<s; i++) {
-            TreeNode n1 = l1.get(i);
-            TreeNode n2 = l2.get(i);
-
-            if(n1 != n2) {
+            if(l1.get(i) != l2.get(i)) {
                 break;
             }
 
-            lca = n1;
+            lca = l1.get(i);
         }
 
         return lca;
@@ -47,5 +46,25 @@ public class LCAOfABinaryTree {
 
         list.remove(list.size() - 1);
         return false;
+    }
+
+    // Without extra space
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        // Base case: null or one of the targets
+        if (root == null || root == p || root == q) {
+            return root;
+        }
+
+        // Check left and right subtrees
+        TreeNode left = lowestCommonAncestor2(root.left, p, q);
+        TreeNode right = lowestCommonAncestor2(root.right, p, q);
+
+        // If both sides found something, this node is where they meet
+        if (left != null && right != null) {
+            return root;
+        }
+
+        // Otherwise, propagate the non-null result upward
+        return (left != null) ? left : right;
     }
 }
