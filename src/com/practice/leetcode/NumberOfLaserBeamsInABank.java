@@ -4,7 +4,9 @@ package com.practice.leetcode;
  * 2125. Number of Laser Beams in a Bank
  */
 public class NumberOfLaserBeamsInABank {
-    public int numberOfBeams(String[] bank) {
+
+    // Brute force
+    public int numberOfBeams1(String[] bank) {
         int c=0;
 
         for(int i=0; i<bank.length-1; i++) {
@@ -32,5 +34,26 @@ public class NumberOfLaserBeamsInABank {
         }
 
         return c;
+    }
+
+    public int numberOfBeams2(String[] bank) {
+        int prev = 0, t = 0;
+
+        for (String row : bank) {
+            int c = 0;
+
+            for (char ch: row.toCharArray()) {
+                if (ch == '1') {
+                    c++;
+                }
+            }
+
+            if (c > 0) {
+                t += c * prev;
+                prev = c;
+            }
+        }
+
+        return t;
     }
 }
