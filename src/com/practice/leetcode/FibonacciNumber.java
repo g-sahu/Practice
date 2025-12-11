@@ -1,45 +1,61 @@
 package com.practice.leetcode;
 
-import java.util.HashMap;
-import java.util.Map;
-
-/*
-509. Fibonacci Number
+/**
+ * 509. Fibonacci Number
  */
 public class FibonacciNumber {
-    public static void main(String[] args) {
-        FibonacciNumber fn = new FibonacciNumber();
-        System.out.println(fn.fib2(6));
+
+    //DP: Top Down
+    public int fib_dp1(int n) {
+        if(n <= 1) {
+            return n;
+        }
+        int[] dp = new int[n+1];
+        dp[1] = 1;
+        return fibo(n, dp);
     }
 
-    //DP: Top-down
-    public int fib1(int n) {
-        Map<Integer, Integer> map = new HashMap<>();
-        map.put(0, 0);
-        map.put(1, 1);
-        return fib(n, map);
-    }
-
-    public int fib(int n, Map<Integer, Integer> map) {
-        if (map.containsKey(n)) {
-            return map.get(n);
+    public int fibo(int n, int[] dp) {
+        if(n <= 1) {
+            return n;
+        }
+        if (dp[n] != 0) {
+            return dp[n];
         }
 
-        map.put(n, fib(n-1, map) + fib(n-2, map));
-        return map.get(n);
+        dp[n] = fibo(n-1, dp) + fibo(n-2, dp);
+        return dp[n];
     }
 
     //DP: Bottom-up
-    public int fib2(int n) {
-        Map<Integer, Integer> map = new HashMap<>();
-        map.put(0, 0);
-        map.put(1, 1);
-
-        for (int i = 2; i <= n; i++) {
-            int fib = map.get(i-1) + map.get(i-2);
-            map.put(i, fib);
+    public int fib_dp2(int n) {
+        if(n <= 1) {
+            return n;
         }
 
-        return map.get(n);
+        int[] dp = new int[n+1];
+        dp[1] = 1;
+
+        for (int i = 2; i <= n; i++) {
+            dp[i] = dp[i-1] + dp[i-2];
+        }
+
+        return dp[n];
+    }
+
+    //Optimal
+    public int fib(int n) {
+        if(n <= 1) {
+            return n;
+        }
+        int a=0, b=1, c=0;
+
+        for(int i=2; i<=n; i++) {
+            c = a+b;
+            a = b;
+            b = c;
+        }
+
+        return b;
     }
 }
