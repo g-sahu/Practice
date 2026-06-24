@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
-/*
-88. Merge Sorted Array
+/**
+ * 88. Merge Sorted Array
  */
 public class MergeSortedArray {
     public static void main(String[] args) {

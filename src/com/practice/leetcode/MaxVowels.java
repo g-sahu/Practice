@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-1456. Maximum Number of Vowels in a Substring of Given Length
+/**
+ * 1456. Maximum Number of Vowels in a Substring of Given Length
  */
 public class MaxVowels {
     public static void main(String[] args) {

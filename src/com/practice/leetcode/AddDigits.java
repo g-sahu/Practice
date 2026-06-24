@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-258. Add Digits
+/**
+ * 258. Add Digits
  */
 public class AddDigits {
     public static void main(String[] args) {

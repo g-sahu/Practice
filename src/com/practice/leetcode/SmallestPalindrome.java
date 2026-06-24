@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-2697. Lexicographically Smallest Palindrome
+/**
+ * 2697. Lexicographically Smallest Palindrome
  */
 public class SmallestPalindrome {
     public static void main(String[] args) {

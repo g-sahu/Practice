@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-383. Ransom Note
+/**
+ * 383. Ransom Note
  */
 public class RansomNote {
 

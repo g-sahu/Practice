@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-392. Is Subsequence
+/**
+ * 392. Is Subsequence
  */
 public class IsSubsequence {
 

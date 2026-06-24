@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import static com.practice.leetcode.LeetUtils.printMatrix;
 
-/*
-2373. Largest Local Values in a Matrix
+/**
+ * 2373. Largest Local Values in a Matrix
  */
 public class LargestLocalMatrix {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-1021. Remove Outermost Parentheses
+/**
+ * 1021. Remove Outermost Parentheses
  */
 public class RemoveOutermostParentheses {
     public static void main(String[] args) {

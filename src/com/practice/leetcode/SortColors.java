@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.TreeMap;
 
-/*
-75. Sort Colors
+/**
+ * 75. Sort Colors
  */
 public class SortColors {
     public static void main(String[] args) {

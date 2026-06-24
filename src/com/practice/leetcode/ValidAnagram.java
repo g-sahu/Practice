@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-242. Valid Anagram
+/**
+ * 242. Valid Anagram
  */
 public class ValidAnagram {
     public static void main(String[] args) {

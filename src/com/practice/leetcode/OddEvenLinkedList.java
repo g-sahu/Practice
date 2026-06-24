@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-328. Odd Even Linked List
+/**
+ * 328. Odd Even Linked List
  */
 public class OddEvenLinkedList {
     public static void main(String[] args) {

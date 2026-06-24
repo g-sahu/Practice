@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-875. Koko Eating Bananas
+/**
+ * 875. Koko Eating Bananas
  */
 public class KokoEatingBananas {
 

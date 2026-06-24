@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-1614. Maximum Nesting Depth of the Parentheses
+/**
+ * 1614. Maximum Nesting Depth of the Parentheses
  */
 public class MaximumNestingDepth {
     public static void main(String[] args) {

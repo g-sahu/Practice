@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.PriorityQueue;
 
-/*
-703. Kth Largest Element in a Stream
+/**
+ * 703. Kth Largest Element in a Stream
  */
 public class KthLargest {
     private final int k;

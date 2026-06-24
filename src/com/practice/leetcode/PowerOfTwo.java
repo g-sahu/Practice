@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-LeetCode #231. Power of Two
+/**
+ * LeetCode #231. Power of Two
  */
 public class PowerOfTwo {
     public static void main(String[] args) {

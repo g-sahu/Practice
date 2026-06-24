@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-1248. Count Number of Nice Subarrays
+/**
+ * 1248. Count Number of Nice Subarrays
  */
 public class CountNiceSubarrays {
 

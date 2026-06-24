@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Stack;
 
-/*
-232. Implement Queue using Stacks
+/**
+ * 232. Implement Queue using Stacks
  */
 public class MyQueue {
     private final Stack<Integer> stack1;

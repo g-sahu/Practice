@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-495. Teemo Attacking
+/**
+ * 495. Teemo Attacking
  */
 public class TeemoAttacking {
 

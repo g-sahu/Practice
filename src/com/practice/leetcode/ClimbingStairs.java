@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-70. Climbing Stairs
+/**
+ * 70. Climbing Stairs
  */
 public class ClimbingStairs {
 

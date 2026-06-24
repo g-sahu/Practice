@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-1. Two Sum
+/**
+ * 1. Two Sum
  */
 public class TwoSum {
 

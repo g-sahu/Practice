@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-374. Guess Number Higher or Lower
+/**
+ * 374. Guess Number Higher or Lower
  */
 public class GuessNumber {
 

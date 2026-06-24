@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-674. Longest Continuous Increasing Subsequence
+/**
+ * 674. Longest Continuous Increasing Subsequence
  */
 public class LongestContinuousIncreasingSubsequence {
 

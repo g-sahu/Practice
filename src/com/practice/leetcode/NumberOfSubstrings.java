@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-1358. Number of Substrings Containing All Three Characters
+/**
+ * 1358. Number of Substrings Containing All Three Characters
  */
 public class NumberOfSubstrings {
     private Map<Character, Integer> map;

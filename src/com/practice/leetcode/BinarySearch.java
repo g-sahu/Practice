@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-704. Binary Search
+/**
+ * 704. Binary Search
  */
 public class BinarySearch {
 

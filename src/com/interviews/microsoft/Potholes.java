@@ -5,46 +5,60 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
+ * You are given a task to fix potholes in a road. The road is described by a string {@code S}
+ * consisting of {@code N} characters. Each character represents a single fragment of the road.
+ * Character {@code '.'} denotes a smooth surface and {@code 'x'} denotes a pothole.
  *
- * You are given a task to fix potholes in a road. The road is described by a string S consisting of N characters.
- * Each character represents a single fragment of the road.
- * Character '.' denotes a smooth surface and 'x' denotes a pothole.
- * For example, S = "...xxx..x" means that the road starts with three smooth fragments, followed by three potholes,
- * followed by two smooth fragments and ending with one pothole.
- * You can choose any number of consecutive potholes and fix all of them.
- * Fixing a segment consisting of K consecutive potholes costs K + 1.
- * In the example above, fixing the first two consecutive potholes costs 2 + 1 = 3 and fixing the last pothole costs 1 + 1 = 2.
- * After these fixes, the road would look like this: ".....x...".
- * You are given a budget B. You can fix multiple segments containing potholes as long as you fit in the budget.
- * What is the maximum number of potholes you can fix?
+ * <p>For example, {@code S = "...xxx..x"} means that the road starts with three smooth fragments,
+ * followed by three potholes, followed by two smooth fragments, and ending with one pothole.</p>
  *
- * Write a function:
+ * <p>You can choose any number of consecutive potholes and fix all of them. Fixing a segment
+ * consisting of {@code K} consecutive potholes costs {@code K + 1}. In the example above, fixing
+ * the first two consecutive potholes costs {@code 2 + 1 = 3} and fixing the last pothole costs
+ * {@code 1 + 1 = 2}. After these fixes, the road would look like this: {@code ".....x..."}.</p>
+ *
+ * <p>You are given a budget {@code B}. You can fix multiple segments containing potholes as long as
+ * you fit in the budget. What is the maximum number of potholes you can fix?</p>
+ *
+ * <p>Write a function:</p>
+ *
+ * <pre>
  * class Solution {
- *      public int solution (String S, int B);
+ *     public int solution(String S, int B);
  * }
- * that, given the string S of length N and the integer B, returns the maximum number of potholes that can be fixed.
+ * </pre>
  *
- * Examples:
- * 1. Given S = "...XXX..x....xxx." and B = 7, the function should return 5.
- *    You can start by fixing the first three consecutive potholes for a cost of 4, obtaining the road: ".. .........xxx.".
- *    Then, you can fix the last two potholes for a cost of 3, obtaining the road: ". .x....x...".
- *    The total cost is 7, which fits in the budget, and you fix 5 potholes in total.
+ * <p>Given the string {@code S} of length {@code N} and the integer {@code B}, the function returns
+ * the maximum number of potholes that can be fixed.</p>
  *
- * 2. Given S = "..xxxxx" and B = 4, the function should return 3.
- *    One way is to fix the middle three potholes, which costs the whole budget and makes the road look as follows: "..x...x".
- *    Alternatively, you could fix the first three potholes or the last three potholes.
+ * <h2>Examples</h2>
+ * <ol>
+ *     <li>Given {@code S = "...XXX..x....xxx."} and {@code B = 7}, the function should return 5.
+ *     You can start by fixing the first three consecutive potholes for a cost of 4, obtaining the
+ *     road: {@code ".. .........xxx."}. Then, you can fix the last two potholes for a cost of 3,
+ *     obtaining the road: {@code ". .x....x..."}. The total cost is 7, which fits in the budget,
+ *     and you fix 5 potholes in total.</li>
  *
- * 3. Given S = "x.x.xxx...x" and B = 14, the function should return 6.
- *    You can fix all the potholes, which costs 2 + 2 + 4 + 2 = 10, leaving you with the spare budget of 4.
- *    This fixes the entire road.
+ *     <li>Given {@code S = "..xxxxx"} and {@code B = 4}, the function should return 3. One way is
+ *     to fix the middle three potholes, which costs the whole budget and makes the road look as
+ *     follows: {@code "..x...x"}. Alternatively, you could fix the first three potholes or the last
+ *     three potholes.</li>
  *
- * 4. Given S = ".." and B = 5, the function should return 0.
- *    There are no potholes to fix.
+ *     <li>Given {@code S = "x.x.xxx...x"} and {@code B = 14}, the function should return 6. You
+ *     can fix all the potholes, which costs {@code 2 + 2 + 4 + 2 = 10}, leaving you with the spare
+ *     budget of 4. This fixes the entire road.</li>
  *
- * Write an efficient algorithm for the following assumptions:
- * N is an integer within the range [1..100,000];
- * B is an integer within the range [0..200,000];
- * string S consists only of characters '.' and 'x'.
+ *     <li>Given {@code S = ".."} and {@code B = 5}, the function should return 0. There are no
+ *     potholes to fix.</li>
+ * </ol>
+ *
+ * <p>Write an efficient algorithm for the following assumptions:</p>
+ *
+ * <ul>
+ *     <li>{@code N} is an integer within the range {@code [1..100,000]}.</li>
+ *     <li>{@code B} is an integer within the range {@code [0..200,000]}.</li>
+ *     <li>String {@code S} consists only of characters {@code '.'} and {@code 'x'}.</li>
+ * </ul>
  */
 public class Potholes {
     

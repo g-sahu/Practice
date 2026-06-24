@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-LeetCode #326. Power of Three
+/**
+ * LeetCode #326. Power of Three
  */
 public class PowerOfThree {
     public static void main(String[] args) {

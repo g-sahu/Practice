@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
-/*
-252. Meeting Rooms
+/**
+ * 252. Meeting Rooms
  */
 public class MeetingRooms {
 

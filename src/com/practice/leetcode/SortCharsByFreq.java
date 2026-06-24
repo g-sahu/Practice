@@ -7,8 +7,8 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-/*
-451. Sort Characters By Frequency
+/**
+ * 451. Sort Characters By Frequency
  */
 public class SortCharsByFreq {
 

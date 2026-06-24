@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-1732. Find the Highest Altitude
+/**
+ * 1732. Find the Highest Altitude
  */
 public class FindHighestAltitude {
 

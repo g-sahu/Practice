@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
-1323. Maximum 69 Number
+/**
+ * 1323. Maximum 69 Number
  */
 public class Maximum69Number {
 

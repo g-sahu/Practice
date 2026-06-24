@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-1721. Swapping Nodes in a Linked List
+/**
+ * 1721. Swapping Nodes in a Linked List
  */
 public class SwapNodesLinkedList {
     public static void main(String[] args) {

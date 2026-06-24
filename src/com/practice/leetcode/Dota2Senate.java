@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-/*
-649. Dota2 Senate
+/**
+ * 649. Dota2 Senate
  */
 public class Dota2Senate {
     public static void main(String[] args) {

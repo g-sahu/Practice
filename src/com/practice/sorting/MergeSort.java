@@ -2,7 +2,7 @@ package com.practice.sorting;
 
 import java.util.Arrays;
 
-/*
+/**
  * Merge Sort
  * Time Complexity - O(n * log n)
  */

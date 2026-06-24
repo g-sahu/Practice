@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-/*
-2130. Maximum Twin Sum of a Linked List
+/**
+ * 2130. Maximum Twin Sum of a Linked List
  */
 public class MaximumTwinSum {
     private ListNode temp;

@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Stack;
 
-/*
-2390. Removing Stars From a String
+/**
+ * 2390. Removing Stars From a String
  */
 public class RemoveStarsFromString {
 

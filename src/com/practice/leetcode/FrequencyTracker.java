@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*
-2671. Frequency Tracker
+/**
+ * 2671. Frequency Tracker
  */
 public class FrequencyTracker {
     private final Map<Integer, Integer> numMap;

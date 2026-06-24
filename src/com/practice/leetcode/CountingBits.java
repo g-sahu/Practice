@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-338. Counting Bits
+/**
+ * 338. Counting Bits
  */
 public class CountingBits {
 

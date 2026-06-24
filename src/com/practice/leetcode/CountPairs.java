@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.Arrays;
 import java.util.List;
 
-/*
-2824. Count Pairs Whose Sum is Less than Target
+/**
+ * 2824. Count Pairs Whose Sum is Less than Target
  */
 public class CountPairs {
     public static void main(String[] args) {

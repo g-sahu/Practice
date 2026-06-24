@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-58. Length of Last Word
+/**
+ * 58. Length of Last Word
  */
 public class LengthOfLastWord {
 

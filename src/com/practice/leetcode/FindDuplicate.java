@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-287. Find the Duplicate Number
+/**
+ * 287. Find the Duplicate Number
  */
 public class FindDuplicate {
 

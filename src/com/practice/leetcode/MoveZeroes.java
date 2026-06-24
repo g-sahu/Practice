@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
-/*
-283. Move Zeroes
+/**
+ * 283. Move Zeroes
  */
 public class MoveZeroes {
     public static void main(String[] args) {

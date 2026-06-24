@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
-/*
-238. Product of Array Except Self
+/**
+ * 238. Product of Array Except Self
  */
 public class ProductOfArrayExceptSelf {
 

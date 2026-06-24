@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-8013. Number of Beautiful Integers in the Range
+/**
+ * 8013. Number of Beautiful Integers in the Range
  */
 public class BeautifulIntegers {
     public static void main(String[] args) {

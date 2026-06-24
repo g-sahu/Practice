@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
-/*
-2656. Maximum Sum With Exactly K Elements
+/**
+ * 2656. Maximum Sum With Exactly K Elements
  */
 public class MaxSumWithKElements {
     public static void main(String[] args) {

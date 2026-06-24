@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-1221. Split a String in Balanced Strings
+/**
+ * 1221. Split a String in Balanced Strings
  */
 public class BalancedStrings {
     public static void main(String[] args) {

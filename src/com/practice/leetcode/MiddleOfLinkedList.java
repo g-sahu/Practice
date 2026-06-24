@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-876. Middle of the Linked List
+/**
+ * 876. Middle of the Linked List
  */
 public class MiddleOfLinkedList {
 

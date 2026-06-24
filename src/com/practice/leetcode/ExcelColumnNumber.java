@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-171. Excel Sheet Column Number
+/**
+ * 171. Excel Sheet Column Number
  */
 public class ExcelColumnNumber {
 

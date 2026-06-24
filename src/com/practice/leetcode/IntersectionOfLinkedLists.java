@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
-/*
-160. Intersection of Two Linked Lists
+/**
+ * 160. Intersection of Two Linked Lists
  */
 public class IntersectionOfLinkedLists {
     public static void main(String[] args) {

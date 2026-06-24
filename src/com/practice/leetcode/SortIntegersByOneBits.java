@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.Arrays;
 import java.util.Comparator;
 
-/*
-1356. Sort Integers by The Number of 1 Bits
+/**
+ * 1356. Sort Integers by The Number of 1 Bits
  */
 public class SortIntegersByOneBits {
 

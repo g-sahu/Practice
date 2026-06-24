@@ -6,8 +6,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Queue;
 
-/*
-1305. All Elements in Two Binary Search Trees
+/**
+ * 1305. All Elements in Two Binary Search Trees
  */
 public class ElementsInBST {
     private final List<Integer> list = new ArrayList<>();

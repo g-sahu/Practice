@@ -6,8 +6,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-/*
-2357. Make Array Zero by Subtracting Equal Amounts
+/**
+ * 2357. Make Array Zero by Subtracting Equal Amounts
  */
 public class MakeArrayZero {
     public static void main(String[] args) {

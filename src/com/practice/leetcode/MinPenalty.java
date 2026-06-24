@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-2483. Minimum Penalty for a Shop
+/**
+ * 2483. Minimum Penalty for a Shop
  */
 public class MinPenalty {
 

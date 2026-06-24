@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
-/*
-202. Happy Number
+/**
+ * 202. Happy Number
  */
 public class HappyNumber {
     public static void main(String[] args) {

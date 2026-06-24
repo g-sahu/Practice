@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-69. Sqrt(x)
+/**
+ * 69. Sqrt(x)
  */
 public class SquareRoot {
     public static void main(String[] args) {

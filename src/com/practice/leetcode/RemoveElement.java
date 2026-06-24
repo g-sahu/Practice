@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
-/*
-27. Remove Element
+/**
+ * 27. Remove Element
  */
 public class RemoveElement {
     public static void main(String[] args) {

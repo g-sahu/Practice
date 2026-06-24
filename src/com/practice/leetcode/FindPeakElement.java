@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-162. Find Peak Element
+/**
+ * 162. Find Peak Element
  */
 public class FindPeakElement {
     public static void main(String[] args) {

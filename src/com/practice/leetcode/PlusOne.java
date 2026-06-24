@@ -4,8 +4,8 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Stack;
 
-/*
-66. Plus One
+/**
+ * 66. Plus One
  */
 public class PlusOne {
     public static void main(String[] args) {

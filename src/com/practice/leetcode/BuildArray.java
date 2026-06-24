@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
-/*
-1920. Build Array from Permutation
+/**
+ * 1920. Build Array from Permutation
  */
 public class BuildArray {
     public static void main(String[] args) {

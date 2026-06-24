@@ -1,9 +1,9 @@
 package com.practice.leetcode;
 
-/*
-        Input: s = "A man, a plan, a canal: Panama"
-        Output: true
-        Explanation: "amanaplanacanalpanama" is a palindrome.
+/**
+ * Input: s = "A man, a plan, a canal: Panama"
+ * Output: true
+ * Explanation: "amanaplanacanalpanama" is a palindrome.
      */
 public class ValidPalindrome {
 

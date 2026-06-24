@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.Arrays;
 import java.util.Stack;
 
-/*
-735. Asteroid Collision
+/**
+ * 735. Asteroid Collision
  */
 public class AsteroidCollision {
 

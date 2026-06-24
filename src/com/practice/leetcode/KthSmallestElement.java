@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-/*
-378. Kth Smallest Element in a Sorted Matrix
+/**
+ * 378. Kth Smallest Element in a Sorted Matrix
  */
 public class KthSmallestElement {
 

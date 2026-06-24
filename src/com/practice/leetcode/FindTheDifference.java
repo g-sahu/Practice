@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-389. Find the Difference
+/**
+ * 389. Find the Difference
  */
 public class FindTheDifference {
 

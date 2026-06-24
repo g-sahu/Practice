@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
-/*
-1099. Two Sum Less Than K
+/**
+ * 1099. Two Sum Less Than K
  */
 public class TwoSumLessThanK {
 

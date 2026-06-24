@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-1768. Merge Strings Alternately
+/**
+ * 1768. Merge Strings Alternately
  */
 public class MergeStringsAlternately {
 

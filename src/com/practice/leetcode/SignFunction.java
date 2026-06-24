@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.math.BigInteger;
 
-/*
-1822. Sign of the Product of an Array
+/**
+ * 1822. Sign of the Product of an Array
  */
 public class SignFunction {
 

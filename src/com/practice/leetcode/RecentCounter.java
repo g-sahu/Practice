@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-/*
-933. Number of Recent Calls
+/**
+ * 933. Number of Recent Calls
  */
 public class RecentCounter {
     private final Queue<Integer> queue;

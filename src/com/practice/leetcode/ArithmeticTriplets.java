@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
-/*
-2367. Number of Arithmetic Triplets
+/**
+ * 2367. Number of Arithmetic Triplets
  */
 public class ArithmeticTriplets {
     public static void main(String[] args) {

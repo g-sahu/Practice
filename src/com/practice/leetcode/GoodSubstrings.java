@@ -3,28 +3,36 @@ package com.practice.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-/* 1876. Substrings of Size Three with Distinct Characters
-
- * A string is good if there are no repeated characters.
- * Given a string s, return the number of good substrings of length three in s.
- * Note that if there are multiple occurrences of the same substring, every occurrence should be counted.
- * A substring is a contiguous sequence of characters in a string.
+/**
+ * 1876. Substrings of Size Three with Distinct Characters
  *
- * Example 1:
+ * <p>A string is good if there are no repeated characters. Given a string {@code s}, return the
+ * number of good substrings of length three in {@code s}. Note that if there are multiple
+ * occurrences of the same substring, every occurrence should be counted.</p>
+ *
+ * <p>A substring is a contiguous sequence of characters in a string.</p>
+ *
+ * <h2>Example 1</h2>
+ * <pre>
  * Input: s = "xyzzaz"
  * Output: 1
  * Explanation: There are 4 substrings of size 3: "xyz", "yzz", "zza", and "zaz".
  * The only good substring of length 3 is "xyz".
+ * </pre>
  *
- * Example 2:
+ * <h2>Example 2</h2>
+ * <pre>
  * Input: s = "aababcabc"
  * Output: 4
  * Explanation: There are 7 substrings of size 3: "aab", "aba", "bab", "abc", "bca", "cab", and "abc".
  * The good substrings are "abc", "bca", "cab", and "abc".
+ * </pre>
  *
- * Constraints:
- * 1 <= s.length <= 100
- * s consists of lowercase English letters.
+ * <h2>Constraints</h2>
+ * <ul>
+ *     <li>{@code 1 <= s.length <= 100}</li>
+ *     <li>{@code s} consists of lowercase English letters.</li>
+ * </ul>
  */
 public class GoodSubstrings {
 

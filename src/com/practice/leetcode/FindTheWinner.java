@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-1823. Find the Winner of the Circular Game
+/**
+ * 1823. Find the Winner of the Circular Game
  */
 public class FindTheWinner {
 

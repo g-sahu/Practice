@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-7. Reverse Integer
+/**
+ * 7. Reverse Integer
  */
 public class ReverseInteger {
     public static void main(String[] args) {

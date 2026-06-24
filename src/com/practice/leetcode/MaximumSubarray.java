@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-53. Maximum Subarray
+/**
+ * 53. Maximum Subarray
  */
 public class MaximumSubarray {
 

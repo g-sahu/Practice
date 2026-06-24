@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-5. Longest Palindromic Substring
+/**
+ * 5. Longest Palindromic Substring
  */
 public class LongestPalindromicSubstring {
     public static void main(String[] args) {

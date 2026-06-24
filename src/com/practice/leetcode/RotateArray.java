@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-189. Rotate Array
+/**
+ * 189. Rotate Array
  */
 public class RotateArray {
 

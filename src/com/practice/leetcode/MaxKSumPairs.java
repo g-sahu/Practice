@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-1679. Max Number of K-Sum Pairs
+/**
+ * 1679. Max Number of K-Sum Pairs
  */
 public class MaxKSumPairs {
 

@@ -1,7 +1,7 @@
 package com.contests.hackerearth;
 
-/*
- * Finding sum of largest sub-array in an array using Kadane's algorithm
+/**
+ * Finds the sum of the largest subarray in an array using Kadane's algorithm.
  */
 
 public class LargestSubarray {

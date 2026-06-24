@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.Arrays;
 import java.util.Comparator;
 
-/*
-1710. Maximum Units on a Truck
+/**
+ * 1710. Maximum Units on a Truck
  */
 public class MaxUnitsOnATruck {
     public static void main(String[] args) {

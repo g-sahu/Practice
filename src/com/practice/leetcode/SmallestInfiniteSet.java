@@ -4,8 +4,8 @@ import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-/*
-2336. Smallest Number in Infinite Set
+/**
+ * 2336. Smallest Number in Infinite Set
  */
 public class SmallestInfiniteSet {
     private final PriorityQueue<Integer> priorityQueue;

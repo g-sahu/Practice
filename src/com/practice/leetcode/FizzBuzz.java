@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
-412. Fizz Buzz
+/**
+ * 412. Fizz Buzz
  */
 public class FizzBuzz {
 

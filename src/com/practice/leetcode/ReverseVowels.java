@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-345. Reverse Vowels of a String
+/**
+ * 345. Reverse Vowels of a String
  */
 public class ReverseVowels {
 

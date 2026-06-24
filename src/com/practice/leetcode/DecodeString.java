@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Stack;
 
-/*
-LeetCode #394. Decode String
+/**
+ * 394. Decode String
  */
 public class DecodeString {
     private int i = 0;

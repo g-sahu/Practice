@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-14. Longest Common Prefix
+/**
+ * 14. Longest Common Prefix
  */
 public class LongestCommonPrefix {
 

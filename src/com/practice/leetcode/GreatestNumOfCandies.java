@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/*
-1431. Kids With the Greatest Number of Candies
+/**
+ * 1431. Kids With the Greatest Number of Candies
  */
 public class GreatestNumOfCandies {
     public static void main(String[] args) {

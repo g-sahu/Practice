@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/*
-118. Pascal's Triangle
+/**
+ * 118. Pascal's Triangle
  */
 public class PascalsTriangle {
     public static void main(String[] args) {

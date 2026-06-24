@@ -5,8 +5,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-/*
-1207. Unique Number of Occurrences
+/**
+ * 1207. Unique Number of Occurrences
  */
 public class UniqueOccurrences {
 

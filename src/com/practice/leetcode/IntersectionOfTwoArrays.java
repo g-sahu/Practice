@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-/*
-349. Intersection of Two Arrays
+/**
+ * 349. Intersection of Two Arrays
  */
 public class IntersectionOfTwoArrays {
 

@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-2114. Maximum Number of Words Found in Sentences
+/**
+ * 2114. Maximum Number of Words Found in Sentences
  */
 public class MaximumWords {
 

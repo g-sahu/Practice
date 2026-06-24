@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
-/*
-73. Set Matrix Zeroes
+/**
+ * 73. Set Matrix Zeroes
  */
 public class SetMatrixZeroes {
 

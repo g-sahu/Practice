@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-268. Missing Number
+/**
+ * 268. Missing Number
  */
 public class MissingNumber {
 

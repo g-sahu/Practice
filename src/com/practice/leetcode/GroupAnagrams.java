@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*
-49. Group Anagrams
+/**
+ * 49. Group Anagrams
  */
 public class GroupAnagrams {
 

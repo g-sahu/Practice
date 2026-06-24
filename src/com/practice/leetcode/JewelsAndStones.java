@@ -6,8 +6,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-/*
-771. Jewels and Stones
+/**
+ * 771. Jewels and Stones
  */
 public class JewelsAndStones {
     public static void main(String[] args) {

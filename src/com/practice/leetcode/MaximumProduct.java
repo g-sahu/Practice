@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-/*
-1464. Maximum Product of Two Elements in an Array
+/**
+ * 1464. Maximum Product of Two Elements in an Array
  */
 public class MaximumProduct {
     public static void main(String[] args) {

@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
-/*
-3. Longest Substring Without Repeating Characters
+/**
+ * 3. Longest Substring Without Repeating Characters
  */
 public class LongestSubstring {
 

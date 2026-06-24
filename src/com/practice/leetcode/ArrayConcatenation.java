@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
-/*
-1929. Concatenation of Array
+/**
+ * 1929. Concatenation of Array
  */
 public class ArrayConcatenation {
 

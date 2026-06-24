@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-1004. Max Consecutive Ones III
+/**
+ * 1004. Max Consecutive Ones III
  */
 public class MaxConsecutiveOnesIII {
 

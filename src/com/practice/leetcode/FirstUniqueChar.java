@@ -4,8 +4,8 @@ import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-387. First Unique Character in a String
+/**
+ * 387. First Unique Character in a String
  */
 public class FirstUniqueChar {
     public static void main(String[] args) {

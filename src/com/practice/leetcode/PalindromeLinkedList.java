@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Stack;
 
-/*
-234. Palindrome Linked List
+/**
+ * 234. Palindrome Linked List
  */
 public class PalindromeLinkedList {
     private ListNode first;

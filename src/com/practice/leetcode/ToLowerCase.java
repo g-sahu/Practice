@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-709. To Lower Case
+/**
+ * 709. To Lower Case
  */
 public class ToLowerCase {
 

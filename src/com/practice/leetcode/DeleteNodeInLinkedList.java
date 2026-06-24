@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-237. Delete Node in a Linked List
+/**
+ * 237. Delete Node in a Linked List
  */
 public class DeleteNodeInLinkedList {
 

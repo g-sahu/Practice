@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
-/*
-1051. Height Checker
+/**
+ * 1051. Height Checker
  */
 public class HeightChecker {
 

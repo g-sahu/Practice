@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-205. Isomorphic Strings
+/**
+ * 205. Isomorphic Strings
  */
 public class IsomorphicStrings {
 

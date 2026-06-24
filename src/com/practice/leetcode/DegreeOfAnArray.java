@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-697. Degree of an Array
+/**
+ * 697. Degree of an Array
  */
 public class DegreeOfAnArray {
 

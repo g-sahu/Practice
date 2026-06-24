@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*
-350. Intersection of Two Arrays II
+/**
+ * 350. Intersection of Two Arrays II
  */
 public class IntersectionOfTwoArraysII {
 

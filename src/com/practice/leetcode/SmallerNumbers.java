@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
-/*
-1365. How Many Numbers Are Smaller Than the Current Number
+/**
+ * 1365. How Many Numbers Are Smaller Than the Current Number
  */
 public class SmallerNumbers {
     public static void main(String[] args) {

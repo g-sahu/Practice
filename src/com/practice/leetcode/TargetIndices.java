@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/*
-2089. Find Target Indices After Sorting Array
+/**
+ * 2089. Find Target Indices After Sorting Array
  */
 public class TargetIndices {
     public static void main(String[] args) {

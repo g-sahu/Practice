@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-724. Find Pivot Index
+/**
+ * 724. Find Pivot Index
  */
 public class FindPivotIndex {
 

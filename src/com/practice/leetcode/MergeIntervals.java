@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-/*
-56. Merge Intervals
+/**
+ * 56. Merge Intervals
  */
 public class MergeIntervals {
 

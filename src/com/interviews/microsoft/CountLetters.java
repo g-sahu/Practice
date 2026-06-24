@@ -4,26 +4,37 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * You are given a string letters made of N English letters.
- * Count the number of different letters that appear in both uppercase and lowercase where all lowercase occurrences
- * of the given letter appear before any uppercase occurrence.
- * For example, for letters = "aaAbcCABBc" the answer is 2. The condition is met for letters 'a' and 'b', but not for 'c'.
+ * You are given a string {@code letters} made of {@code N} English letters. Count the number of
+ * different letters that appear in both uppercase and lowercase where all lowercase occurrences of
+ * the given letter appear before any uppercase occurrence.
  *
- * Write a function:
+ * <p>For example, for {@code letters = "aaAbcCABBc"} the answer is 2. The condition is met for
+ * letters {@code 'a'} and {@code 'b'}, but not for {@code 'c'}.</p>
+ *
+ * <p>Write a function:</p>
+ *
+ * <pre>
  * class Solution {
- *      public int solution(String letters);
+ *     public int solution(String letters);
  * }
- * that, given a string letters, returns the number of different letters fulfilling the conditions above.
+ * </pre>
  *
- * Examples:
- * 1. Given letters
- * "aaAbcCABBc", the function should return 2, as explained above.
- * 2. Given letters = "xyzXYZabcABC", the function should return 6.
- * 3. Given letters = "ABCabcAefG", the function should return 0.
+ * <p>Given a string {@code letters}, the function returns the number of different letters fulfilling
+ * the conditions above.</p>
  *
- * Write an efficient algorithm for the following assumptions:
- * • N is an integer within the range [1..100,000];
- * • string letters is made only of letters (a-z and/or A-Z).
+ * <h2>Examples</h2>
+ * <ol>
+ *     <li>Given {@code letters = "aaAbcCABBc"}, the function should return 2, as explained above.</li>
+ *     <li>Given {@code letters = "xyzXYZabcABC"}, the function should return 6.</li>
+ *     <li>Given {@code letters = "ABCabcAefG"}, the function should return 0.</li>
+ * </ol>
+ *
+ * <p>Write an efficient algorithm for the following assumptions:</p>
+ *
+ * <ul>
+ *     <li>{@code N} is an integer within the range {@code [1..100,000]}.</li>
+ *     <li>String {@code letters} is made only of letters ({@code a-z} and/or {@code A-Z}).</li>
+ * </ul>
  */
 public class CountLetters {
 

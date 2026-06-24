@@ -1,40 +1,53 @@
 package com.practice.leetcode;
 
-/*
-    2269. Find the K-Beauty of a Number
-
-    The k-beauty of an integer num is defined as the number of substrings of num when it is read as a string that meet the following conditions:
-    It has a length of k.
-    It is a divisor of num.
-    Given integers num and k, return the k-beauty of num.
-
-    Note:
-    Leading zeros are allowed.
-    0 is not a divisor of any value.
-    A substring is a contiguous sequence of characters in a string.
-
-    Example 1:
-    Input: num = 240, k = 2
-    Output: 2
-    Explanation: The following are the substrings of num of length k:
-    - "24" from "240": 24 is a divisor of 240.
-    - "40" from "240": 40 is a divisor of 240.
-    Therefore, the k-beauty is 2.
-
-    Example 2:
-    Input: num = 430043, k = 2
-    Output: 2
-    Explanation: The following are the substrings of num of length k:
-    - "43" from "430043": 43 is a divisor of 430043.
-    - "30" from "430043": 30 is not a divisor of 430043.
-    - "00" from "430043": 0 is not a divisor of 430043.
-    - "04" from "430043": 4 is not a divisor of 430043.
-    - "43" from "430043": 43 is a divisor of 430043.
-    Therefore, the k-beauty is 2.
-
-    Constraints:
-    1 <= num <= 109
-    1 <= k <= num.length (taking num as a string)
+/**
+ * 2269. Find the K-Beauty of a Number
+ *
+ * <p>The k-beauty of an integer {@code num} is defined as the number of substrings of {@code num}
+ * when it is read as a string that meet the following conditions:</p>
+ *
+ * <ul>
+ *     <li>It has a length of {@code k}.</li>
+ *     <li>It is a divisor of {@code num}.</li>
+ * </ul>
+ *
+ * <p>Given integers {@code num} and {@code k}, return the k-beauty of {@code num}.</p>
+ *
+ * <h2>Notes</h2>
+ * <ul>
+ *     <li>Leading zeros are allowed.</li>
+ *     <li>0 is not a divisor of any value.</li>
+ *     <li>A substring is a contiguous sequence of characters in a string.</li>
+ * </ul>
+ *
+ * <h2>Example 1</h2>
+ * <pre>
+ * Input: num = 240, k = 2
+ * Output: 2
+ * Explanation: The following are the substrings of num of length k:
+ * - "24" from "240": 24 is a divisor of 240.
+ * - "40" from "240": 40 is a divisor of 240.
+ * Therefore, the k-beauty is 2.
+ * </pre>
+ *
+ * <h2>Example 2</h2>
+ * <pre>
+ * Input: num = 430043, k = 2
+ * Output: 2
+ * Explanation: The following are the substrings of num of length k:
+ * - "43" from "430043": 43 is a divisor of 430043.
+ * - "30" from "430043": 30 is not a divisor of 430043.
+ * - "00" from "430043": 0 is not a divisor of 430043.
+ * - "04" from "430043": 4 is not a divisor of 430043.
+ * - "43" from "430043": 43 is a divisor of 430043.
+ * Therefore, the k-beauty is 2.
+ * </pre>
+ *
+ * <h2>Constraints</h2>
+ * <ul>
+ *     <li>{@code 1 <= num <= 109}</li>
+ *     <li>{@code 1 <= k <= num.length}, taking {@code num} as a string.</li>
+ * </ul>
  */
 public class KBeauty {
 

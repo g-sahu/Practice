@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-2095. Delete the Middle Node of a Linked List
+/**
+ * 2095. Delete the Middle Node of a Linked List
  */
 public class DeleteMiddleOfLinkedList {
     public static void main(String[] args) {

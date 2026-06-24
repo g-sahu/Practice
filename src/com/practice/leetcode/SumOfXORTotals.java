@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-1863. Sum of All Subset XOR Totals
+/**
+ * 1863. Sum of All Subset XOR Totals
  */
 public class SumOfXORTotals {
 

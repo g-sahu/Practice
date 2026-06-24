@@ -3,8 +3,8 @@ package com.practice.leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
-/*
-217. Contains Duplicate
+/**
+ * 217. Contains Duplicate
  */
 public class ContainsDuplicate {
 

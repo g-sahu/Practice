@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-/*
-151. Reverse Words in a String
+/**
+ * 151. Reverse Words in a String
  */
 public class ReverseWords {
     public static void main(String[] args) {

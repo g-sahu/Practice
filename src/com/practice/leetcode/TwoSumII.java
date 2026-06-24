@@ -2,8 +2,8 @@ package com.practice.leetcode;
 
 import java.util.Arrays;
 
-/*
-167. Two Sum II - Input Array Is Sorted
+/**
+ * 167. Two Sum II - Input Array Is Sorted
  */
 public class TwoSumII {
 

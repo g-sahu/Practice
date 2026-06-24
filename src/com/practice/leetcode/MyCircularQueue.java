@@ -1,7 +1,7 @@
 package com.practice.leetcode;
 
-/*
-622. Design Circular Queue
+/**
+ * 622. Design Circular Queue
  */
 public class MyCircularQueue {
     private final int capacity;
