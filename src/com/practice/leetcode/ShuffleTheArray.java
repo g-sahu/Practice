@@ -9,12 +9,9 @@ public class ShuffleTheArray {
         int[] ans = new int[nums.length];
         int i = 0, j = n, x = 0;
 
-        while (j < nums.length) {
-            if (x % 2 == 0) {
-                ans[x++] = nums[i++];
-            } else {
-                ans[x++] = nums[j++];
-            }
+        while(j < nums.length) {
+            ans[x] = (x % 2 == 0) ? nums[i++] : nums[j++];
+            x++;
         }
 
         return ans;
