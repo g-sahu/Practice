@@ -6,7 +6,7 @@ package com.practice.leetcode;
 public class NumsSmallerThanCurrent {
 
     //Brute Force
-    public int[] smallerNumbersThanCurrent1(int[] nums) {
+    public int[] smallerNumbersThanCurrent_1(int[] nums) {
         int[] ans = new int[nums.length];
 
         for(int i=0; i<nums.length; i++) {
@@ -21,6 +21,27 @@ public class NumsSmallerThanCurrent {
             }
 
             ans[i] = c;
+        }
+
+        return ans;
+    }
+
+    //Counting Sort
+    public int[] smallerNumbersThanCurrent_2(int[] nums) {
+        int[] count = new int[102];
+
+        for(int n: nums) {
+            count[n+1]++;
+        }
+
+        for(int i=1; i<count.length; i++) {
+            count[i] += count[i-1];
+        }
+
+        int[] ans = new int[nums.length];
+
+        for(int i=0; i<nums.length; i++) {
+            ans[i] = count[nums[i]];
         }
 
         return ans;
