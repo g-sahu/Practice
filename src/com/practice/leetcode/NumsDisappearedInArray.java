@@ -9,7 +9,7 @@ import java.util.List;
 public class NumsDisappearedInArray {
 
     // Using Extra Space
-    public List<Integer> findDisappearedNumbers(int[] nums) {
+    public List<Integer> findDisappearedNumbers_1(int[] nums) {
         int[] count = new int[100001];
 
         for(int n: nums) {
@@ -25,5 +25,28 @@ public class NumsDisappearedInArray {
         }
 
         return l;
+    }
+
+    // Without Extra Space
+    public List<Integer> findDisappearedNumbers_2(int[] nums) {
+        int l = nums.length;
+
+        for(int i=0; i<l; i++) {
+            int n = Math.abs(nums[i]) - 1;
+
+            if(nums[n] > 0) {
+                nums[n] = -nums[n];
+            }
+        }
+
+        List<Integer> list = new ArrayList<>();
+
+        for(int i=0; i<l; i++) {
+            if(nums[i] > 0) {
+                list.add(i+1);
+            }
+        }
+
+        return list;
     }
 }
