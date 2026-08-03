@@ -1,6 +1,7 @@
 package com.practice.leetcode;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * 1475. Final Prices With a Special Discount in a Shop
@@ -8,7 +9,7 @@ import java.util.Stack;
 public class FinalPricesWithDiscount {
 
     public int[] finalPrices(int[] prices) {
-        Stack<Integer> stack = new Stack<>();
+        Deque<Integer> stack = new ArrayDeque<>();
         int[] ans = prices.clone();
 
         for(int i=0; i<prices.length; i++) {
