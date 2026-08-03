@@ -12,34 +12,28 @@ public class EvaluateReversePolishNotation {
         int a, b;
 
         for(String t: tokens) {
-            switch(t) {
-                case "+":
+            switch (t) {
+                case "+" -> {
                     a = stack.pop();
                     b = stack.pop();
-                    stack.push(b+a);
-                    break;
-
-                case "-":
+                    stack.push(b + a);
+                }
+                case "-" -> {
                     a = stack.pop();
                     b = stack.pop();
-                    stack.push(b-a);
-                    break;
-
-                case "*":
+                    stack.push(b - a);
+                }
+                case "*" -> {
                     a = stack.pop();
                     b = stack.pop();
-                    stack.push(b*a);
-                    break;
-
-                case "/":
+                    stack.push(b * a);
+                }
+                case "/" -> {
                     a = stack.pop();
                     b = stack.pop();
-                    stack.push(b/a);
-                    break;
-
-                default:
-                    stack.push(Integer.parseInt(t));
-                    break;
+                    stack.push(b / a);
+                }
+                default -> stack.push(Integer.parseInt(t));
             }
         }
 
