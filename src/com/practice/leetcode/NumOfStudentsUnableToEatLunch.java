@@ -1,6 +1,6 @@
 package com.practice.leetcode;
 
-import java.util.LinkedList;
+import java.util.ArrayDeque;
 import java.util.Queue;
 
 /**
@@ -9,7 +9,7 @@ import java.util.Queue;
 public class NumOfStudentsUnableToEatLunch {
 
     public int countStudents(int[] students, int[] sw) {
-        Queue<Integer> q = new LinkedList<>();
+        Queue<Integer> q = new ArrayDeque<>();
 
         for (int student : students) {
             q.add(student);
@@ -18,7 +18,7 @@ public class NumOfStudentsUnableToEatLunch {
         int i = 0;
         int j = 0;
 
-        while(!q.isEmpty() && i<sw.length && j <= q.size()) {
+        while(!q.isEmpty() && i<sw.length && j < q.size()) {
             int s = q.remove();
 
             if(sw[i] == s) {
