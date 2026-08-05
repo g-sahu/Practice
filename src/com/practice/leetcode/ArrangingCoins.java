@@ -1,0 +1,27 @@
+package com.practice.leetcode;
+
+/**
+ * 441. Arranging Coins
+ */
+public class ArrangingCoins {
+
+    public int arrangeCoins(int n) {
+        long left = 1;
+        long right = n;
+        int result = 0;
+
+        while(left <= right) {
+            long mid = left + (right - left)/2;
+            long coinsNeeded = mid * (mid + 1)/2;
+
+            if(coinsNeeded <= n) {
+                result = (int) mid;
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return result;
+    }
+}
