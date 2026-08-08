@@ -2,7 +2,6 @@ package com.practice.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -21,23 +20,24 @@ public class MergeIntervals {
         LeetUtils.printMatrix(merge);
     }
 
-    public int[][] merge(int[][] intervals) {
-        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
-        int start = intervals[0][0];
-        int end = intervals[0][1];
-        List<int[]> merged = new ArrayList<>();
+    public int[][] merge(int[][] arr) {
+        Arrays.sort(arr, (x, y) -> Integer.compare(x[0], y[0]));
+        List<int[]> ans = new ArrayList<>();
+        int[] prev = arr[0];
 
-        for (int[] currentRow: intervals) {
-            if (end < currentRow[0]) {
-                merged.add(new int[]{start, end});
-                start = currentRow[0];
-                end = currentRow[1];
-            } else if (end < currentRow[1]) {
-                end = currentRow[1];
+        for(int i=1; i<arr.length; i++) {
+            int[] curr = arr[i];
+
+            if(curr[0] <= prev[1]) {
+                int end = Math.max(prev[1], curr[1]);
+                prev[1] = end;
+            } else {
+                ans.add(prev);
+                prev = curr;
             }
         }
 
-        merged.add(new int[]{start, end});
-        return merged.toArray(new int[merged.size()][]);
+        ans.add(prev);
+        return ans.toArray(new int[ans.size()][]);
     }
 }
